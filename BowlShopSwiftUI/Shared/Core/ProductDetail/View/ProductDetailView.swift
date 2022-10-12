@@ -2,14 +2,16 @@
 //  ProductDetailView.swift
 //  BowlShopSwiftUI
 //
-//  Created by Baris OZGEN on 10.10.2022.
+//  Created by Baris OZGEN on 12.10.2022.
 //
 
 import SwiftUI
 
 struct ProductDetailView: View {
+    
     @State private var selectedTab = 0
     @State private var ingredientsViewShown = false
+    @State private var productExtraInformationViewShown = false
     
     @State private var isFavorite = false
     @State private var cartCount = 0
@@ -17,18 +19,11 @@ struct ProductDetailView: View {
     @State private var isDescriptionExpanded: Bool = false
     private let descriptionText = "Salmon Poke Bowl is made with sweet savory marinated salmon that is seared to perfection and served in a bowl with fresh veggies and rice!"
     
-    private let imageThumbWidth = 84.0
+    @State private var imageFrame: [CGFloat] = [84.0, 92.0]
     private let viewWidth = UIScreen.main.bounds.width - 72.0
-    private let viewHeight = UIScreen.main.bounds.height
+    private let productExtraInformationViewY = UIScreen.main.bounds.height
     
-    private let scrollPositionMaxY: CGFloat = UIScreen.main.bounds.height - 229
-    private let scrollPositionMinY: CGFloat = 82
-    @State private var scrollPositionY: CGFloat = UIScreen.main.bounds.height - 229
-    @State private var productExtraInformationViewShown = false
-    @State private var scrollDetection = true
-
-    @State private var scrollPos = 0.0
-    
+    @State var viewState = CGSize.zero
     
     var body: some View {
         ZStack{
@@ -37,33 +32,79 @@ struct ProductDetailView: View {
             // background state image
             backgroundImage
             
-            
-            productExtraInformation
-            
             VStack{
                 // close, like, cart buttons
                 headerView
                 
-                // show images with tab view
-                imageTabView
-                
-                // product title, ingredients, detail
-                productInformation
-                
-                Divider()
-                    .background(.white.opacity(0.58))
-                    .frame(width: viewWidth)
-                    .padding(.vertical, 10)
-                    .opacity(!productExtraInformationViewShown ? 1 : 0)
-                //add to cart
-                addCartView
+                // define AnyLayout -> VStack or HStack
+                layout{
+                    // show images with tab view
+                    imageTabView
+                    
+                    // product title, ingredients, detail & add to cart
+                    VStack(alignment: .trailing){
+                        // product title, ingredients, detail
+                        productInformation
+                            .opacity(viewState.height < -150 ? 0 : 1)
+                        
+                        Divider()
+                            .background(.white.opacity(0.58))
+                            .frame(width: .infinity)
+                            .opacity(viewState.height < -145 ? 0 : 1)
+                            .padding(.vertical, !productExtraInformationViewShown ? 10 : 0)
+                        //add to cart
+                        addCartView
+                    }
+                }
+                .frame(width: viewWidth)
                 
                 Spacer()
-                
-            }//Text("\(scrollPos)").foregroundColor(.orange)
+            }
+            
+            productExtraInformation
+                .offset(y: viewState.height)
+                .gesture(
+                    DragGesture().onChanged { value in
+                        viewState = value.translation
+                        
+                        if viewState.height < -270 {
+                            productExtraInformationViewShown = true
+                            viewState.height = -7
+                        }
+                        else if viewState.height > 192 { productExtraInformationViewShown = false
+                            viewState.height = 7
+                        }
+                    }
+                        .onEnded { value in
+                            withAnimation(.spring()) {
+                                
+                                productExtraInformationViewShown = viewState.height < 0 ? true : false
+                                
+                                if productExtraInformationViewShown { imageFrame = [92, 92] }
+                                else {  imageFrame = [viewWidth + 14, viewWidth + 92] }
+                                
+                                viewState = .zero
+                                
+                            }
+                        }
+                )
+            
+            /* VStack{
+             
+             }.sheet(isPresented: $productExtraInformationViewShown){
+             productExtraInformation
+             .presentationDetents([.height(70), .fraction(0.8)])
+             .presentationDragIndicator(.visible)
+             }*/
+            
+            
+            
         }
     }
     
+    private var layout: AnyLayout {
+        return !productExtraInformationViewShown ? AnyLayout(VStackLayout()) : AnyLayout(HStackLayout())
+    }
     
     private var backgroundColor : some View {
         LinearGradient(
@@ -114,55 +155,34 @@ struct ProductDetailView: View {
     }
     
     private var imageTabView : some View {
-        HStack(spacing: 0) {
+        HStack{
             TabView(selection: $selectedTab){
                 Image("smoked-salmon-poke-bowl")
                     .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: productExtraInformationViewShown ? imageThumbWidth : viewWidth, maxHeight: productExtraInformationViewShown ? imageThumbWidth :  viewWidth)
+                    .scaledToFit()
                     .clipped()
                     .cornerRadius(7)
+                    .padding(.horizontal, 7)
                     .tag(0)
                 
-                Image("smoked-salmon-poke-bowl2")
+                Image("smoked-salmon-poke-bowl3")
                     .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: productExtraInformationViewShown ? imageThumbWidth :  viewWidth, maxHeight: productExtraInformationViewShown ? imageThumbWidth :  viewWidth)
+                    .scaledToFit()
                     .clipped()
                     .cornerRadius(7)
+                    .padding(.horizontal, 7)
                     .tag(1)
             }
             .tabViewStyle(.page(indexDisplayMode:  !productExtraInformationViewShown ? .automatic : .never))
             
-            if productExtraInformationViewShown {
-                
-                VStack(alignment: .trailing){
-                    // product title
-                    Text("salmon poke bowl".capitalized)
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .shadow(color: .black, radius: 2, x: 1, y: 1)
-                    
-                    HStack(alignment: .bottom,spacing:2){
-                        Text("$")
-                            .font(.subheadline)
-                            .offset(y: -3)
-                        Text("9.99")
-                            .font(.title)
-                    }
-                    .foregroundColor(.white)
-                    .fontWeight(.semibold)
-                }
-                .frame(width: 200, alignment: .trailing)
-                .padding()
-                .padding(.trailing, 20)
-                .opacity(productExtraInformationViewShown ? 1 : 0)
-            }
-            
         }
-        .frame(width: .infinity, height:  productExtraInformationViewShown ? imageThumbWidth : viewWidth + 92, alignment: .top)
+        .frame(width: imageFrame.first, height:  imageFrame.last)
         .padding(.vertical, productExtraInformationViewShown ? 10 : -14)
+        .onAppear{
+            withAnimation(.spring()){
+                imageFrame = [viewWidth + 14, viewWidth + 92]
+            }
+        }
     }
     
     private var productInformation : some View {
@@ -177,97 +197,98 @@ struct ProductDetailView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .shadow(color: .black, radius: 2, x: 1, y: 1)
-                    Spacer()
                     
-                    // ingredients summary view
-                    HStack{
-                        Image(systemName: "flame.fill")
-                        Image(systemName: "fish.fill")
-                        Image(systemName: "aqi.medium")
+                    
+                    if !productExtraInformationViewShown {
                         
-                    }
-                    .foregroundColor(.white)
-                    .scaleEffect(!ingredientsViewShown ? 1 : 0.1)
-                    .onTapGesture {
-                        withAnimation(.spring()){ ingredientsViewShown.toggle() }
-                    }
-                }
-                
-                // product description text
-                Text(descriptionText)
-                    .font(.subheadline)
-                    .foregroundColor(Color(.systemGray5))
-                    .lineLimit(isDescriptionExpanded ? nil : 2)
-                
-                if descriptionText.count > 78 {
-                    Text(!isDescriptionExpanded ? "Show More" : "Show Less")
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(.systemGray5))
-                        .onTapGesture {
-                            withAnimation(.spring()){ isDescriptionExpanded.toggle() }
+                        Spacer()
+                        
+                        // ingredients summary view
+                        HStack{
+                            Image(systemName: "flame.fill")
+                            Image(systemName: "fish.fill")
+                            Image(systemName: "aqi.medium")
+                            
                         }
+                        .foregroundColor(.white)
+                        .scaleEffect(!ingredientsViewShown ? 1 : 0.1)
+                        .onTapGesture {
+                            withAnimation(.spring()){ ingredientsViewShown.toggle() }
+                        }
+                    }
                 }
                 
+                if !productExtraInformationViewShown {
+                    // product description text
+                    Text(descriptionText)
+                        .font(.subheadline)
+                        .foregroundColor(Color(.systemGray5))
+                        .lineLimit(isDescriptionExpanded ? nil : 2)
+                    
+                    if descriptionText.count > 78 {
+                        Text(!isDescriptionExpanded ? "Show More" : "Show Less")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemGray5))
+                            .onTapGesture {
+                                withAnimation(.spring()){ isDescriptionExpanded.toggle() }
+                            }
+                    }
+                }
             }
             .opacity(!ingredientsViewShown ? 1 : 0)
             
-            // ingredients view
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack{
-                    
-                    Divider()
-                        .frame(height: 29)
-                        .background(.white)
-                    
+            if !productExtraInformationViewShown {
+                // ingredients view
+                ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        Image(systemName: "flame.fill")
-                        Text("spicy".capitalized)
+                        
+                        Divider()
+                            .frame(height: 29)
+                            .background(.white)
+                        
+                        HStack{
+                            Image(systemName: "flame.fill")
+                            Text("spicy".capitalized)
+                        }
+                        .foregroundColor(Color(.orange))
+                        
+                        Divider()
+                            .frame(height: 29)
+                            .background(.white)
+                        
+                        HStack{
+                            Image(systemName: "fish.fill")
+                            Text("seafood".capitalized)
+                        }
+                        .foregroundColor(.cyan)
+                        
+                        Divider()
+                            .frame(height: 29)
+                            .background(.white)
+                        
+                        HStack{
+                            Image(systemName: "aqi.medium")
+                            Text("sesame".capitalized)
+                        }
+                        .foregroundColor(.brown)
+                        
+                        Divider()
+                            .frame(height: 29)
+                            .background(.white)
                     }
-                    .foregroundColor(Color(.orange))
-                    
-                    Divider()
-                        .frame(height: 29)
-                        .background(.white)
-                    
-                    HStack{
-                        Image(systemName: "fish.fill")
-                        Text("seafood".capitalized)
-                    }
-                    .foregroundColor(.cyan)
-                    
-                    Divider()
-                        .frame(height: 29)
-                        .background(.white)
-                    
-                    HStack{
-                        Image(systemName: "aqi.medium")
-                        Text("sesame".capitalized)
-                    }
-                    .foregroundColor(.brown)
-                    
-                    Divider()
-                        .frame(height: 29)
-                        .background(.white)
+                }
+                .padding()
+                .background(.black.opacity(0.29))
+                .cornerRadius(0)
+                .opacity(ingredientsViewShown ? 1 : 0)
+                .scaleEffect(ingredientsViewShown ? 1 : 0)
+                .offset(x: (ingredientsViewShown ? 0 : 129), y:0)
+                .onTapGesture {
+                    withAnimation(.spring()){ ingredientsViewShown.toggle() }
                 }
             }
-            .padding()
-            .background(.black.opacity(0.29))
-            .cornerRadius(0)
-            .opacity(ingredientsViewShown ? 1 : 0)
-            .scaleEffect(ingredientsViewShown ? 1 : 0)
-            .offset(x: (ingredientsViewShown ? 0 : 129), y:0)
-            .onTapGesture {
-                withAnimation(.spring()){ ingredientsViewShown.toggle() }
-            }
         }
-        .frame(width: viewWidth)
-        .offset(
-            x: !productExtraInformationViewShown ? 0 : 200,
-            y: !productExtraInformationViewShown ? 0 : -200)
-        .opacity(!productExtraInformationViewShown ? 1 : 0)
-        .disabled(!productExtraInformationViewShown ? false : true)
-       
     }
     
     private var addCartView : some View {
@@ -282,105 +303,64 @@ struct ProductDetailView: View {
             .foregroundColor(.white)
             .fontWeight(.semibold)
             
-            Spacer()
-            
-            Button {
+            if !productExtraInformationViewShown {
+                Spacer()
                 
-            } label: {
-                Text("Add to Card")
-                    .foregroundColor(.white)
-                    .withPositiveButtonModifier(frameWidth: 200, backgroundColor: .black.opacity(0.29))
+                Button {
+                    
+                } label: {
+                    Text("Add to Card")
+                        .foregroundColor(.white)
+                        .withPositiveButtonModifier(frameWidth: 200, backgroundColor: .black.opacity(0.29))
+                }
+                .withPositiveButtonStyle()
             }
-            .withPositiveButtonStyle()
-            //animate when a product is added
         }
-        .frame(width: viewWidth)
-        .offset(
-            x: !productExtraInformationViewShown ? 0 : 800,
-            y: !productExtraInformationViewShown ? 0 : -800)
-        .opacity(!productExtraInformationViewShown ? 1 : 0)
-        .disabled(!productExtraInformationViewShown ? false : true)
+        .opacity(viewState.height > -80 ? 1 : 0)
     }
     
+    private var productExtraMenu : some View {
+        HStack{
+            Text("Food Content")
+                .onTapGesture {
+                    productExtraInformationViewShown.toggle()
+                }
+            Spacer()
+            Text("Drinks and Sauces")
+                .onTapGesture {
+                    productExtraInformationViewShown.toggle()
+                }
+        }
+        .foregroundColor(.white)
+        .font(.headline)
+        .padding(.vertical, 14)
+    }
     private var capsule : some View {
         Capsule()
             .foregroundColor(Color.gray.opacity(0.5))
-            .frame(width: 58, height: 7)
+            .frame(width: 40, height: 7)
             .padding(.top, 10)
-            .padding(.bottom, 14)
     }
     
     private var productExtraInformation : some View {
-        ScrollView{
-            GeometryReader{geo -> AnyView? in
-                
-                let minY = geo.frame(in: .global)
-                    .minY
-                scrollPos = minY
-                
-                if scrollDetection && !productExtraInformationViewShown && minY < 653 {
-                    
-                    scrollDetection = false
-                    
-                    withAnimation(.spring()){
-                        scrollPositionY = scrollPositionMinY
-                        productExtraInformationViewShown = true
-                    }
-                    
-                    DispatchQueue
-                        .main
-                        .asyncAfter(deadline: .now() + 2.29 ) {
-                            scrollDetection = true
-                        }
-                }
-                if scrollDetection && productExtraInformationViewShown && minY > 170 {
-                    
-                    scrollDetection = false
-                    
-                    withAnimation(.spring()){
-                        scrollPositionY = scrollPositionMaxY
-                        productExtraInformationViewShown = false
-                    }
-                    
-                    DispatchQueue
-                        .main
-                        .asyncAfter(deadline: .now() + 2.29 ) {
-                            scrollDetection = true
-                        }
-                }
-                
-                return nil
-            }
-            
-            ZStack {
-                Color.black.opacity(!productExtraInformationViewShown ? 0.58 : 0.14)
+        
+        ZStack {
+            Color.black.opacity(productExtraInformationViewShown ? 0.07 : 0.29)
+            VStack{
+                capsule
+                productExtraMenu
                 
                 VStack{
-                    capsule
-                    
-                    HStack{
-                        Text("Food Content")
-                        Spacer()
-                        Text("Drinks and Sauces")
-                    }
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    
-                    ScrollView{
-                        Text("Food Content")
-                    }
+                    Text("\(viewState.height)")
                 }
-                .frame(width: viewWidth)
+                .frame(height: 60)
+                Spacer()
             }
-            .cornerRadius(29)
-            .frame(width: .infinity, height: viewHeight - 192)
-            .padding(.top, 58)
+            .frame(width: viewWidth)
         }
-        //.background(.cyan)
-        .offset(y: scrollPositionY)
-        //.background(.blue)
+        .cornerRadius(productExtraInformationViewShown ? 0 : 29)
+        .offset(y: productExtraInformationViewShown ? 158 : productExtraInformationViewY - 150)
     }
-    
 }
 
 struct ProductDetailView_Previews: PreviewProvider {
