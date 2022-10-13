@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ProductDetailView: View {
     
@@ -25,6 +26,10 @@ struct ProductDetailView: View {
     
     @State var viewState = CGSize.zero
     
+    @State var videoPlayer = AVPlayer(url: Bundle.main.url(forResource: "video1", withExtension: "mp4")!)
+    
+    @State var videoPlayerCurrentTime : Double = 3.0
+    
     var body: some View {
         ZStack{
             // background linear color
@@ -39,7 +44,9 @@ struct ProductDetailView: View {
                 // define AnyLayout -> VStack or HStack
                 layout{
                     // show images with tab view
-                    imageTabView
+                    //imageTabView
+                    // show 180 vide
+                    videoPlayerView
                     
                     // product title, ingredients, detail & add to cart
                     VStack(alignment: .trailing){
@@ -49,7 +56,6 @@ struct ProductDetailView: View {
                         
                         Divider()
                             .background(.white.opacity(0.58))
-                            .frame(width: .infinity)
                             .opacity(viewState.height < -145 ? 0 : 1)
                             .padding(.vertical, !productExtraInformationViewShown ? 10 : 0)
                         //add to cart
@@ -96,8 +102,6 @@ struct ProductDetailView: View {
              .presentationDetents([.height(70), .fraction(0.8)])
              .presentationDragIndicator(.visible)
              }*/
-            
-            
             
         }
     }
@@ -360,6 +364,39 @@ struct ProductDetailView: View {
         }
         .cornerRadius(productExtraInformationViewShown ? 0 : 29)
         .offset(y: productExtraInformationViewShown ? 158 : productExtraInformationViewY - 150)
+    }
+    
+    private var videoPlayerView : some View {
+        VStack{
+            VideoPlayer(player: videoPlayer)
+                .frame(width: imageFrame.first, height: imageFrame.first, alignment: .center)
+                .cornerRadius(14)
+                .onAppear{
+                    videoPlayer.isMuted = true
+                    
+                    withAnimation(.spring()){
+                        imageFrame = [viewWidth + 14, viewWidth + 92]
+                        
+                    }
+                }
+                .disabled(true)
+            
+            if !productExtraInformationViewShown{
+                Slider(value: $videoPlayerCurrentTime, in: 0...6, step: 0.05){}
+            minimumValueLabel: {Image(systemName: "chevron.left")}
+            maximumValueLabel: {Image(systemName: "chevron.right")}
+                    .frame(height: 60)
+                    .blendMode(.softLight)
+                    .foregroundColor(.white)
+                    .tint(.clear)
+                    .onChange(of: videoPlayerCurrentTime){ t in
+                        
+                        let seekTime = CMTime(seconds: t, preferredTimescale: Int32(NSEC_PER_SEC))
+                        
+                        videoPlayer.seek(to: seekTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+                    }
+            }
+        }
     }
 }
 

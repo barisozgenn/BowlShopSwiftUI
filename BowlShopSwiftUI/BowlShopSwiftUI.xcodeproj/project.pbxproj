@@ -19,6 +19,8 @@
 		AF89988C28E8A74D00FE3795 /* BowlShopSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89988B28E8A74D00FE3795 /* BowlShopSwiftUITests.swift */; };
 		AF89989628E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89989528E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift */; };
 		AF89989828E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89989728E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift */; };
+		AFC3F95E28F7494E00C36449 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFC3F95C28F7494E00C36449 /* video2.mp4 */; };
+		AFC3F95F28F7494E00C36449 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFC3F95D28F7494E00C36449 /* video1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		AF89989128E8A74D00FE3795 /* BowlShopSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlShopSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF89989528E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIUITests.swift; sourceTree = "<group>"; };
 		AF89989728E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AFC3F95C28F7494E00C36449 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		AFC3F95D28F7494E00C36449 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF289BEC28F81D24003D58A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AF3E36B828F48122000AE6A8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +138,7 @@
 		AF448FC228F411340012FE3E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AF289BEC28F81D24003D58A3 /* Utils */,
 				AF448FC328F4113A0012FE3E /* Extensions */,
 				AF448FC728F456FF0012FE3E /* Model */,
 				AF3E36B828F48122000AE6A8 /* Core */,
@@ -174,6 +186,7 @@
 		AF89987928E8A74C00FE3795 /* BowlShopSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				AFC3F95B28F7493200C36449 /* videos */,
 				AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */,
 				AF89987E28E8A74D00FE3795 /* Assets.xcassets */,
 				AF89988028E8A74D00FE3795 /* Preview Content */,
@@ -204,6 +217,15 @@
 				AF89989728E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = BowlShopSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		AFC3F95B28F7493200C36449 /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				AFC3F95D28F7494E00C36449 /* video1.mp4 */,
+				AFC3F95C28F7494E00C36449 /* video2.mp4 */,
+			);
+			path = videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF89988228E8A74D00FE3795 /* Preview Assets.xcassets in Resources */,
+				AFC3F95F28F7494E00C36449 /* video1.mp4 in Resources */,
 				AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */,
+				AFC3F95E28F7494E00C36449 /* video2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
