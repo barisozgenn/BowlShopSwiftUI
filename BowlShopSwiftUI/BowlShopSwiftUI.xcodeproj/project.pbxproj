@@ -16,22 +16,15 @@
 		AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */; };
 		AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89987E28E8A74D00FE3795 /* Assets.xcassets */; };
 		AF89988228E8A74D00FE3795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89988128E8A74D00FE3795 /* Preview Assets.xcassets */; };
-		AF89988C28E8A74D00FE3795 /* BowlShopSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89988B28E8A74D00FE3795 /* BowlShopSwiftUITests.swift */; };
-		AF89989628E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89989528E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift */; };
-		AF89989828E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89989728E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift */; };
+		AFBF9B8D28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF9B8C28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.swift */; };
+		AFBF9B9428FAAE61003A0E7F /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF9B9328FAAE61003A0E7F /* ProductDetailViewModel.swift */; };
+		AFBF9B9628FAAF37003A0E7F /* ProductDetailViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF9B9528FAAF37003A0E7F /* ProductDetailViewModel_Tests.swift */; };
 		AFC3F95E28F7494E00C36449 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFC3F95C28F7494E00C36449 /* video2.mp4 */; };
 		AFC3F95F28F7494E00C36449 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFC3F95D28F7494E00C36449 /* video1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AF89988828E8A74D00FE3795 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AF89986F28E8A74C00FE3795 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AF89987628E8A74C00FE3795;
-			remoteInfo = BowlShopSwiftUI;
-		};
-		AF89989228E8A74D00FE3795 /* PBXContainerItemProxy */ = {
+		AFBF9B8E28FAAE1A003A0E7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF89986F28E8A74C00FE3795 /* Project object */;
 			proxyType = 1;
@@ -51,11 +44,10 @@
 		AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIApp.swift; sourceTree = "<group>"; };
 		AF89987E28E8A74D00FE3795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF89988128E8A74D00FE3795 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AF89988728E8A74D00FE3795 /* BowlShopSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlShopSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF89988B28E8A74D00FE3795 /* BowlShopSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUITests.swift; sourceTree = "<group>"; };
-		AF89989128E8A74D00FE3795 /* BowlShopSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlShopSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF89989528E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIUITests.swift; sourceTree = "<group>"; };
-		AF89989728E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AFBF9B8A28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlShopSwiftUI_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBF9B8C28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUI_Tests.swift; sourceTree = "<group>"; };
+		AFBF9B9328FAAE61003A0E7F /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		AFBF9B9528FAAF37003A0E7F /* ProductDetailViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel_Tests.swift; sourceTree = "<group>"; };
 		AFC3F95C28F7494E00C36449 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
 		AFC3F95D28F7494E00C36449 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,14 +60,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF89988428E8A74D00FE3795 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF89988E28E8A74D00FE3795 /* Frameworks */ = {
+		AFBF9B8728FAAE1A003A0E7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,6 +107,7 @@
 		AF3E36BB28F48144000AE6A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AFBF9B9328FAAE61003A0E7F /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,8 +153,7 @@
 			children = (
 				AF448FC228F411340012FE3E /* Shared */,
 				AF89987928E8A74C00FE3795 /* BowlShopSwiftUI */,
-				AF89988A28E8A74D00FE3795 /* BowlShopSwiftUITests */,
-				AF89989428E8A74D00FE3795 /* BowlShopSwiftUIUITests */,
+				AFBF9B8B28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests */,
 				AF89987828E8A74C00FE3795 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -177,8 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */,
-				AF89988728E8A74D00FE3795 /* BowlShopSwiftUITests.xctest */,
-				AF89989128E8A74D00FE3795 /* BowlShopSwiftUIUITests.xctest */,
+				AFBF9B8A28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,21 +186,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AF89988A28E8A74D00FE3795 /* BowlShopSwiftUITests */ = {
+		AFBF9B8B28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				AF89988B28E8A74D00FE3795 /* BowlShopSwiftUITests.swift */,
+				AFBF9B8C28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.swift */,
+				AFBF9B9528FAAF37003A0E7F /* ProductDetailViewModel_Tests.swift */,
 			);
-			path = BowlShopSwiftUITests;
-			sourceTree = "<group>";
-		};
-		AF89989428E8A74D00FE3795 /* BowlShopSwiftUIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AF89989528E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift */,
-				AF89989728E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift */,
-			);
-			path = BowlShopSwiftUIUITests;
+			path = BowlShopSwiftUI_Tests;
 			sourceTree = "<group>";
 		};
 		AFC3F95B28F7493200C36449 /* videos */ = {
@@ -248,41 +224,23 @@
 			productReference = AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AF89988628E8A74D00FE3795 /* BowlShopSwiftUITests */ = {
+		AFBF9B8928FAAE1A003A0E7F /* BowlShopSwiftUI_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF89989E28E8A74D00FE3795 /* Build configuration list for PBXNativeTarget "BowlShopSwiftUITests" */;
+			buildConfigurationList = AFBF9B9028FAAE1A003A0E7F /* Build configuration list for PBXNativeTarget "BowlShopSwiftUI_Tests" */;
 			buildPhases = (
-				AF89988328E8A74D00FE3795 /* Sources */,
-				AF89988428E8A74D00FE3795 /* Frameworks */,
-				AF89988528E8A74D00FE3795 /* Resources */,
+				AFBF9B8628FAAE1A003A0E7F /* Sources */,
+				AFBF9B8728FAAE1A003A0E7F /* Frameworks */,
+				AFBF9B8828FAAE1A003A0E7F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AF89988928E8A74D00FE3795 /* PBXTargetDependency */,
+				AFBF9B8F28FAAE1A003A0E7F /* PBXTargetDependency */,
 			);
-			name = BowlShopSwiftUITests;
-			productName = BowlShopSwiftUITests;
-			productReference = AF89988728E8A74D00FE3795 /* BowlShopSwiftUITests.xctest */;
+			name = BowlShopSwiftUI_Tests;
+			productName = BowlShopSwiftUI_Tests;
+			productReference = AFBF9B8A28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AF89989028E8A74D00FE3795 /* BowlShopSwiftUIUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF8998A128E8A74D00FE3795 /* Build configuration list for PBXNativeTarget "BowlShopSwiftUIUITests" */;
-			buildPhases = (
-				AF89988D28E8A74D00FE3795 /* Sources */,
-				AF89988E28E8A74D00FE3795 /* Frameworks */,
-				AF89988F28E8A74D00FE3795 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AF89989328E8A74D00FE3795 /* PBXTargetDependency */,
-			);
-			name = BowlShopSwiftUIUITests;
-			productName = BowlShopSwiftUIUITests;
-			productReference = AF89989128E8A74D00FE3795 /* BowlShopSwiftUIUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -291,18 +249,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					AF89987628E8A74C00FE3795 = {
 						CreatedOnToolsVersion = 14.0;
 					};
-					AF89988628E8A74D00FE3795 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = AF89987628E8A74C00FE3795;
-					};
-					AF89989028E8A74D00FE3795 = {
-						CreatedOnToolsVersion = 14.0;
+					AFBF9B8928FAAE1A003A0E7F = {
+						CreatedOnToolsVersion = 14.1;
 						TestTargetID = AF89987628E8A74C00FE3795;
 					};
 				};
@@ -321,8 +275,7 @@
 			projectRoot = "";
 			targets = (
 				AF89987628E8A74C00FE3795 /* BowlShopSwiftUI */,
-				AF89988628E8A74D00FE3795 /* BowlShopSwiftUITests */,
-				AF89989028E8A74D00FE3795 /* BowlShopSwiftUIUITests */,
+				AFBF9B8928FAAE1A003A0E7F /* BowlShopSwiftUI_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,14 +292,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF89988528E8A74D00FE3795 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF89988F28E8A74D00FE3795 /* Resources */ = {
+		AFBF9B8828FAAE1A003A0E7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,38 +313,26 @@
 				AF448FC928F457340012FE3E /* FoodIngredients.swift in Sources */,
 				AF3E36BD28F48158000AE6A8 /* ProductDetailViewOldStyle.swift in Sources */,
 				AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */,
+				AFBF9B9428FAAE61003A0E7F /* ProductDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF89988328E8A74D00FE3795 /* Sources */ = {
+		AFBF9B8628FAAE1A003A0E7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF89988C28E8A74D00FE3795 /* BowlShopSwiftUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF89988D28E8A74D00FE3795 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF89989828E8A74D00FE3795 /* BowlShopSwiftUIUITestsLaunchTests.swift in Sources */,
-				AF89989628E8A74D00FE3795 /* BowlShopSwiftUIUITests.swift in Sources */,
+				AFBF9B8D28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.swift in Sources */,
+				AFBF9B9628FAAF37003A0E7F /* ProductDetailViewModel_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AF89988928E8A74D00FE3795 /* PBXTargetDependency */ = {
+		AFBF9B8F28FAAE1A003A0E7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AF89987628E8A74C00FE3795 /* BowlShopSwiftUI */;
-			targetProxy = AF89988828E8A74D00FE3795 /* PBXContainerItemProxy */;
-		};
-		AF89989328E8A74D00FE3795 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AF89987628E8A74C00FE3795 /* BowlShopSwiftUI */;
-			targetProxy = AF89989228E8A74D00FE3795 /* PBXContainerItemProxy */;
+			targetProxy = AFBF9B8E28FAAE1A003A0E7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -577,18 +511,17 @@
 			};
 			name = Release;
 		};
-		AF89989F28E8A74D00FE3795 /* Debug */ = {
+		AFBF9B9128FAAE1A003A0E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.BowlShopSwiftUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "barisozgen.BowlShopSwiftUI-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -597,59 +530,22 @@
 			};
 			name = Debug;
 		};
-		AF8998A028E8A74D00FE3795 /* Release */ = {
+		AFBF9B9228FAAE1A003A0E7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.BowlShopSwiftUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "barisozgen.BowlShopSwiftUI-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BowlShopSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BowlShopSwiftUI";
-			};
-			name = Release;
-		};
-		AF8998A228E8A74D00FE3795 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SHP38F3EM7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.BowlShopSwiftUIUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BowlShopSwiftUI;
-			};
-			name = Debug;
-		};
-		AF8998A328E8A74D00FE3795 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SHP38F3EM7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.BowlShopSwiftUIUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BowlShopSwiftUI;
 			};
 			name = Release;
 		};
@@ -674,20 +570,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF89989E28E8A74D00FE3795 /* Build configuration list for PBXNativeTarget "BowlShopSwiftUITests" */ = {
+		AFBF9B9028FAAE1A003A0E7F /* Build configuration list for PBXNativeTarget "BowlShopSwiftUI_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF89989F28E8A74D00FE3795 /* Debug */,
-				AF8998A028E8A74D00FE3795 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF8998A128E8A74D00FE3795 /* Build configuration list for PBXNativeTarget "BowlShopSwiftUIUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF8998A228E8A74D00FE3795 /* Debug */,
-				AF8998A328E8A74D00FE3795 /* Release */,
+				AFBF9B9128FAAE1A003A0E7F /* Debug */,
+				AFBF9B9228FAAE1A003A0E7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
