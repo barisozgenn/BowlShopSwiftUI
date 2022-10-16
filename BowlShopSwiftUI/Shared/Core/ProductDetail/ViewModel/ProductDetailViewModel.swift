@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ProductDetailViewModel : ObservableObject {
     
@@ -13,8 +14,12 @@ class ProductDetailViewModel : ObservableObject {
     @Published var dataArray: [String] = []
     @Published var selectedItem : String? = nil
     
-    init(isAvailableInStock: Bool) {
+    let dataService : ProductDataServiceProtocol
+    var cancellables = Set<AnyCancellable>()
+
+    init(isAvailableInStock: Bool, dataService : ProductDataServiceProtocol = ProductMockDataService(products: nil)) {
         self.isAvailableInStock = isAvailableInStock
+        self.dataService = dataService
     }
     
     func addItem(item: String){
@@ -29,5 +34,36 @@ class ProductDetailViewModel : ObservableObject {
         else {
             selectedItem = nil
         }
+    }
+    
+    func saveItem(item: String) throws{
+        guard !item.isEmpty else { throw DataError.noData }
+        
+        if let sItem = dataArray.first(where: {$0 == item}) {
+            print("item saved: \(sItem)")
+        }else {
+            throw DataError.itemNotFound
+        }
+    }
+    enum DataError: LocalizedError {
+        case noData
+        case itemNotFound
+    }
+    
+    func downloadWithEscaping(){
+        dataService.downloadProductsWithEscaping { [weak self] returnedProducts in
+            self?.dataArray = returnedProducts
+        }
+    }
+    
+    func downloadWithCombine(){
+        dataService.downloadProductsWithCombine()
+            .sink { _ in
+                
+            } receiveValue: { [weak self] returnedProducts in
+                self?.dataArray = returnedProducts
+            }
+            .store(in: &cancellables)
+
     }
 }
