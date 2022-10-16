@@ -16,4 +16,8 @@ extension View {
     func withPositiveButtonStyle(scaleValue : CGFloat = 0.9) -> some View {
         buttonStyle(PositiveButtonStyle(scaleValue: scaleValue))
     }
+    
+    func withSectionTitleModifier() -> some View {
+        modifier(SectionTitleModifier())
+    }
 }
