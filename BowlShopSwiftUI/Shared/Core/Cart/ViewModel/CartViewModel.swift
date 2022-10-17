@@ -19,6 +19,8 @@ class CartViewModel: ObservableObject{
     
     @Published var cartTotalPrice: Double = 14.29
     
+    @Published var paymentStatus: PaymentStatus = .noProcess
+    
     init() {
         
         self.productsInCart = ["a product", "b product", "c product"]
@@ -31,7 +33,14 @@ class CartViewModel: ObservableObject{
     func payButtonPressed(){
         setPostStatus()
         if canBePost {
+            paymentStatus = .processing
             
+            Task{
+                try await Task.sleep(nanoseconds: UInt64(5 * Double(NSEC_PER_SEC)))
+                paymentStatus = .success
+                try await Task.sleep(nanoseconds: UInt64(2 * Double(NSEC_PER_SEC)))
+                paymentStatus = .completed
+            }
         }
     }
     

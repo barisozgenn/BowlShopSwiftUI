@@ -30,6 +30,8 @@ struct ProductDetailView: View {
     
     @State var videoPlayerCurrentTime : Double = 3.0
     
+    @State var cartViewVisible : Bool = false
+    
     var body: some View {
         ZStack{
             // background linear color
@@ -94,17 +96,12 @@ struct ProductDetailView: View {
                             }
                         }
                 )
-            
-            /* VStack{
-             
-             }.sheet(isPresented: $productExtraInformationViewShown){
-             productExtraInformation
-             .presentationDetents([.height(70), .fraction(0.8)])
-             .presentationDragIndicator(.visible)
-             }*/
-            
         }
     }
+    
+}
+
+extension ProductDetailView {
     
     private var layout: AnyLayout {
         return !productExtraInformationViewShown ? AnyLayout(VStackLayout()) : AnyLayout(HStackLayout())
@@ -151,6 +148,9 @@ struct ProductDetailView: View {
                 .scaledToFit()
                 .frame(width: 24)
                 .foregroundColor(.white)
+                .onTapGesture {
+                    cartViewVisible.toggle()
+                }
             
         }
         .padding(.vertical, 7)
@@ -311,13 +311,18 @@ struct ProductDetailView: View {
                 Spacer()
                 
                 Button {
-                    
+                    cartViewVisible.toggle()
                 } label: {
                     Text("Add to Card")
                         .foregroundColor(.white)
                         .withPositiveButtonModifier(frameWidth: 200, backgroundColor: .black.opacity(0.29))
                 }
                 .withPositiveButtonStyle()
+                .sheet(isPresented: $cartViewVisible){
+                    CartView()
+                        .presentationDetents([.height(100), .fraction(0.955)])
+             .presentationDragIndicator(.hidden)
+             }
             }
         }
         .opacity(viewState.height > -80 ? 1 : 0)

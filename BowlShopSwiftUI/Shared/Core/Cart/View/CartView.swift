@@ -17,25 +17,26 @@ struct CartView: View {
             // bakcground Colors
             bgColor
             backgroundImage
-            
-            VStack{
-                
-                divider
-                cartVStack
-                
-                Spacer()
-                
-                divider
-                addressVStack
-                
-                divider
-                paymentVStack
-                
-                
+            ScrollView {
+                VStack{
+                    capsule
+                    cartVStack
+                    
+                    Spacer()
+                    
+                    divider
+                    addressVStack
+                    
+                    divider
+                    paymentVStack
+                    
+                    
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 14)
             }
-            .padding(.horizontal)
-            .padding(.bottom, 14)
             
+            paymentStatusVStack
         }
     }
     
@@ -60,7 +61,13 @@ extension CartView {
         .blur(radius: 100)
         .opacity(0.7)
     }
-    
+    private var capsule : some View {
+        Capsule()
+            .foregroundColor(Color.gray.opacity(0.5))
+            .frame(width: 40, height: 7)
+            .padding(.top, 10)
+    }
+
     private var divider : some View {
         Divider()
             .background(.white.opacity(0.7))
@@ -167,6 +174,26 @@ extension CartView {
             // add to cart
             paymentButtonView
         }
+    }
+    
+    private var paymentStatusVStack: some View {
+        withAnimation(.spring()){
+            VStack{
+                Image(systemName: "creditcard.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 64)
+                    .padding()
+                Text(vm.paymentStatus.title)
+                    .font(.headline)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.white)
+            .background(vm.paymentStatus.backgroundColor.opacity(0.77))
+            .scaleEffect(vm.paymentStatus == .noProcess || vm.paymentStatus == .completed ? 0 : 1)
+            .opacity(vm.paymentStatus == .noProcess || vm.paymentStatus == .completed ? 0 : 1)
+        }
+        
     }
 }
 struct CartView_Previews: PreviewProvider {
