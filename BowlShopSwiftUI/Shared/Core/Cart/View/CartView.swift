@@ -51,16 +51,16 @@ extension CartView {
             LinearGradient(colors: [.gray,.black],
                            startPoint: .bottomTrailing,
                            endPoint: .topLeading)
-                .ignoresSafeArea()
-                .opacity(0.9)
+            .ignoresSafeArea()
+            .opacity(0.9)
         }
     }
     private var backgroundImage : some View {
         Image(  withAnimation(.spring()){"smoked-salmon-poke-bowl"})
-        .resizable()
-        .ignoresSafeArea()
-        .blur(radius: 100)
-        .opacity(0.7)
+            .resizable()
+            .ignoresSafeArea()
+            .blur(radius: 100)
+            .opacity(0.7)
     }
     private var capsule : some View {
         Capsule()
@@ -68,7 +68,7 @@ extension CartView {
             .frame(width: 40, height: 7)
             .padding(.top, 10)
     }
-
+    
     private var divider : some View {
         Divider()
             .background(.white.opacity(0.7))
@@ -106,7 +106,7 @@ extension CartView {
                     alertMessage += "\(index+1)) \(message)\n"
                 }
                 return Alert(title: Text("OPPS!"), message: Text(alertMessage))
-                    
+                
             })
             .accessibilityIdentifier("payButton")
         }
@@ -126,7 +126,7 @@ extension CartView {
                 LazyVStack(spacing: 7){
                     ForEach(vm.productsInCart, id: \.self) {product in
                         CartCellView(title: product, price: "$14.99", image: "smoked-salmon-poke-bowl")
-                            
+                        
                     }
                 }
             }
@@ -150,7 +150,7 @@ extension CartView {
                 .background(.white.opacity(0.7))
                 .foregroundColor(.black.opacity(0.7))
                 .cornerRadius(4)
-                .accessibilityIdentifier("deliveryNoteTextField")
+               .accessibilityIdentifier("deliveryNoteTextField")
             
             if vm.userAddresses.isEmpty {
                 CartCellView(title: "Add Delivery Address", image: "plus")
@@ -188,6 +188,7 @@ extension CartView {
                     .scaledToFit()
                     .frame(height: 64)
                     .padding()
+                    .accessibilityIdentifier("paymentStatus")
                 Text(vm.paymentStatus.title)
                     .font(.headline)
             }
