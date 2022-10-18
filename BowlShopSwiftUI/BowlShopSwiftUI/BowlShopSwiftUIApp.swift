@@ -11,7 +11,8 @@ import SwiftUI
 struct BowlShopSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("Coming Soon!")
+            //Text("Coming Soon!")
+            ProductDetailView()
         }
     }
 }

@@ -25,7 +25,7 @@ class CartViewModel: ObservableObject{
         
         self.productsInCart = ["a product", "b product", "c product"]
         self.userAddresses = ["BO Tower on JBR St 7/29", "BO Tower on JBR St 7/29"]
-        self.userPaymentMethods = ["**** 1234", "**** 5678"]
+        //self.userPaymentMethods = ["**** 1234", "**** 5678"]
         
         setPostStatus()
     }

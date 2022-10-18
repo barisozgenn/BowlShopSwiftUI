@@ -1,0 +1,17 @@
+query GetCountriesForDelivery {
+countries(filter:
+    {
+      code: {in : ["DE","NL"]}
+    }
+  ){
+    code
+    name
+    emoji
+    phone
+    states {
+      code
+      name
+    }
+  }
+}
+

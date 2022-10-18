@@ -17,6 +17,7 @@ struct CartView: View {
             // bakcground Colors
             bgColor
             backgroundImage
+            
             ScrollView {
                 VStack{
                     capsule
@@ -105,7 +106,9 @@ extension CartView {
                     alertMessage += "\(index+1)) \(message)\n"
                 }
                 return Alert(title: Text("OPPS!"), message: Text(alertMessage))
+                    
             })
+            .accessibilityIdentifier("payButton")
         }
         
     }
@@ -127,7 +130,7 @@ extension CartView {
                     }
                 }
             }
-            .frame(height: .infinity)
+            
         }
     }
     
@@ -147,6 +150,7 @@ extension CartView {
                 .background(.white.opacity(0.7))
                 .foregroundColor(.black.opacity(0.7))
                 .cornerRadius(4)
+                .accessibilityIdentifier("deliveryNoteTextField")
             
             if vm.userAddresses.isEmpty {
                 CartCellView(title: "Add Delivery Address", image: "plus")

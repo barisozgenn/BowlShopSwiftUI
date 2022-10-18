@@ -46,9 +46,9 @@ struct ProductDetailView: View {
                 // define AnyLayout -> VStack or HStack
                 layout{
                     // show images with tab view
-                    //imageTabView
+                    imageTabView
                     // show 180 vide
-                    videoPlayerView
+                    // videoPlayerView
                     
                     // product title, ingredients, detail & add to cart
                     VStack(alignment: .trailing){
@@ -151,6 +151,7 @@ extension ProductDetailView {
                 .onTapGesture {
                     cartViewVisible.toggle()
                 }
+                .accessibilityIdentifier("addToCartHeaderButton")
             
         }
         .padding(.vertical, 7)
@@ -168,7 +169,7 @@ extension ProductDetailView {
                     .cornerRadius(7)
                     .padding(.horizontal, 7)
                     .tag(0)
-                
+                    .accessibilityIdentifier("image1")
                 Image("smoked-salmon-poke-bowl3")
                     .resizable()
                     .scaledToFit()
@@ -176,9 +177,10 @@ extension ProductDetailView {
                     .cornerRadius(7)
                     .padding(.horizontal, 7)
                     .tag(1)
+                    .accessibilityIdentifier("image2")
             }
             .tabViewStyle(.page(indexDisplayMode:  !productExtraInformationViewShown ? .automatic : .never))
-            
+            .accessibilityIdentifier("imagesTabView")
         }
         .frame(width: imageFrame.first, height:  imageFrame.last)
         .padding(.vertical, productExtraInformationViewShown ? 10 : -14)
@@ -317,9 +319,11 @@ extension ProductDetailView {
                         .foregroundColor(.white)
                         .withPositiveButtonModifier(frameWidth: 200, backgroundColor: .black.opacity(0.29))
                 }
+                .accessibilityIdentifier("addToCartButton")
                 .withPositiveButtonStyle()
                 .sheet(isPresented: $cartViewVisible){
                     CartView()
+                        .accessibilityIdentifier("cardViewPageBottom")
                         .presentationDetents([.height(100), .fraction(0.955)])
              .presentationDragIndicator(.hidden)
              }
@@ -369,6 +373,7 @@ extension ProductDetailView {
         }
         .cornerRadius(productExtraInformationViewShown ? 0 : 29)
         .offset(y: productExtraInformationViewShown ? 158 : productExtraInformationViewY - 150)
+        .accessibilityIdentifier("productExtraInformation")
     }
     
     private var videoPlayerView : some View {
