@@ -23,7 +23,16 @@
 		AF3E36C228F533E7000AE6A8 /* PositiveButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E36C128F533E7000AE6A8 /* PositiveButtonModifier.swift */; };
 		AF3E36C428F534BA000AE6A8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E36C328F534BA000AE6A8 /* View.swift */; };
 		AF3E36C628F6AA65000AE6A8 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E36C528F6AA65000AE6A8 /* ProductDetailView.swift */; };
-		AF448FC928F457340012FE3E /* FoodIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF448FC828F457340012FE3E /* FoodIngredients.swift */; };
+		AF448FC928F457340012FE3E /* FoodIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF448FC828F457340012FE3E /* FoodIngredient.swift */; };
+		AF6AE8E229091051001D1947 /* AdminSwiftUI_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE8E129091051001D1947 /* AdminSwiftUI_MacApp.swift */; };
+		AF6AE8E629091052001D1947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6AE8E529091052001D1947 /* Assets.xcassets */; };
+		AF6AE8E929091052001D1947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6AE8E829091052001D1947 /* Preview Assets.xcassets */; };
+		AF6AE8F4290910A6001D1947 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE8F3290910A6001D1947 /* HomeView.swift */; };
+		AF6AE8F629091444001D1947 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE8F529091444001D1947 /* SideMenuView.swift */; };
+		AF6AE8F9290915B4001D1947 /* SideBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE8F8290915B4001D1947 /* SideBarMenu.swift */; };
+		AF6AE8FB29091B61001D1947 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE8FA29091B61001D1947 /* ProductModel.swift */; };
+		AF6AE8FC29091B61001D1947 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE8FA29091B61001D1947 /* ProductModel.swift */; };
+		AF6AE8FD29091D08001D1947 /* FoodIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF448FC828F457340012FE3E /* FoodIngredient.swift */; };
 		AF84B99628FDD64F00851428 /* schemaCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = AF84B99528FDD64F00851428 /* schemaCountry.json */; };
 		AF84B99D28FDDAF900851428 /* queriesCountry.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AF84B99C28FDDAF900851428 /* queriesCountry.graphql */; };
 		AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */; };
@@ -71,7 +80,16 @@
 		AF3E36C128F533E7000AE6A8 /* PositiveButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveButtonModifier.swift; sourceTree = "<group>"; };
 		AF3E36C328F534BA000AE6A8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		AF3E36C528F6AA65000AE6A8 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
-		AF448FC828F457340012FE3E /* FoodIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIngredients.swift; sourceTree = "<group>"; };
+		AF448FC828F457340012FE3E /* FoodIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIngredient.swift; sourceTree = "<group>"; };
+		AF6AE8DF29091051001D1947 /* AdminSwiftUI_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdminSwiftUI_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6AE8E129091051001D1947 /* AdminSwiftUI_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSwiftUI_MacApp.swift; sourceTree = "<group>"; };
+		AF6AE8E529091052001D1947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF6AE8E829091052001D1947 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF6AE8EA29091052001D1947 /* AdminSwiftUI_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AdminSwiftUI_Mac.entitlements; sourceTree = "<group>"; };
+		AF6AE8F3290910A6001D1947 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AF6AE8F529091444001D1947 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		AF6AE8F8290915B4001D1947 /* SideBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenu.swift; sourceTree = "<group>"; };
+		AF6AE8FA29091B61001D1947 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		AF84B99528FDD64F00851428 /* schemaCountry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemaCountry.json; sourceTree = "<group>"; };
 		AF84B99C28FDDAF900851428 /* queriesCountry.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = queriesCountry.graphql; sourceTree = "<group>"; };
 		AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlShopSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +106,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		AF38E3C228FD445A0089795D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6AE8DC29091051001D1947 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -233,8 +258,79 @@
 		AF448FC728F456FF0012FE3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF448FC828F457340012FE3E /* FoodIngredients.swift */,
+				AF448FC828F457340012FE3E /* FoodIngredient.swift */,
 				AF38E3BF28FD338B0089795D /* PaymentStatus.swift */,
+				AF6AE8FA29091B61001D1947 /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF6AE8E029091051001D1947 /* AdminSwiftUI_Mac */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8F729091597001D1947 /* Model */,
+				AF6AE8EF2909108A001D1947 /* Core */,
+				AF6AE8EE2909106C001D1947 /* App */,
+				AF6AE8E529091052001D1947 /* Assets.xcassets */,
+				AF6AE8EA29091052001D1947 /* AdminSwiftUI_Mac.entitlements */,
+				AF6AE8E729091052001D1947 /* Preview Content */,
+			);
+			path = AdminSwiftUI_Mac;
+			sourceTree = "<group>";
+		};
+		AF6AE8E729091052001D1947 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8E829091052001D1947 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AF6AE8EE2909106C001D1947 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8E129091051001D1947 /* AdminSwiftUI_MacApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AF6AE8EF2909108A001D1947 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8F02909108E001D1947 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AF6AE8F02909108E001D1947 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8F229091098001D1947 /* ViewModel */,
+				AF6AE8F129091093001D1947 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AF6AE8F129091093001D1947 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8F3290910A6001D1947 /* HomeView.swift */,
+				AF6AE8F529091444001D1947 /* SideMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF6AE8F229091098001D1947 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF6AE8F729091597001D1947 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AE8F8290915B4001D1947 /* SideBarMenu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +351,7 @@
 				AF89987928E8A74C00FE3795 /* BowlShopSwiftUI */,
 				AFBF9B8B28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests */,
 				AF38E3C628FD445A0089795D /* BowlShopSwiftUI_UITests */,
+				AF6AE8E029091051001D1947 /* AdminSwiftUI_Mac */,
 				AF89987828E8A74C00FE3795 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,6 +362,7 @@
 				AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */,
 				AFBF9B8A28FAAE1A003A0E7F /* BowlShopSwiftUI_Tests.xctest */,
 				AF38E3C528FD445A0089795D /* BowlShopSwiftUI_UITests.xctest */,
+				AF6AE8DF29091051001D1947 /* AdminSwiftUI_Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +426,23 @@
 			productReference = AF38E3C528FD445A0089795D /* BowlShopSwiftUI_UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AF6AE8DE29091051001D1947 /* AdminSwiftUI_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6AE8ED29091052001D1947 /* Build configuration list for PBXNativeTarget "AdminSwiftUI_Mac" */;
+			buildPhases = (
+				AF6AE8DB29091051001D1947 /* Sources */,
+				AF6AE8DC29091051001D1947 /* Frameworks */,
+				AF6AE8DD29091051001D1947 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdminSwiftUI_Mac;
+			productName = AdminSwiftUI_Mac;
+			productReference = AF6AE8DF29091051001D1947 /* AdminSwiftUI_Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		AF89987628E8A74C00FE3795 /* BowlShopSwiftUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF89989B28E8A74D00FE3795 /* Build configuration list for PBXNativeTarget "BowlShopSwiftUI" */;
@@ -379,6 +494,9 @@
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = AF89987628E8A74C00FE3795;
 					};
+					AF6AE8DE29091051001D1947 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					AF89987628E8A74C00FE3795 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -406,6 +524,7 @@
 				AF89987628E8A74C00FE3795 /* BowlShopSwiftUI */,
 				AFBF9B8928FAAE1A003A0E7F /* BowlShopSwiftUI_Tests */,
 				AF38E3C428FD445A0089795D /* BowlShopSwiftUI_UITests */,
+				AF6AE8DE29091051001D1947 /* AdminSwiftUI_Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -415,6 +534,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6AE8DD29091051001D1947 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6AE8E929091052001D1947 /* Preview Assets.xcassets in Resources */,
+				AF6AE8E629091052001D1947 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +579,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF6AE8DB29091051001D1947 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6AE8FD29091D08001D1947 /* FoodIngredient.swift in Sources */,
+				AF6AE8E229091051001D1947 /* AdminSwiftUI_MacApp.swift in Sources */,
+				AF6AE8F629091444001D1947 /* SideMenuView.swift in Sources */,
+				AF6AE8FC29091B61001D1947 /* ProductModel.swift in Sources */,
+				AF6AE8F4290910A6001D1947 /* HomeView.swift in Sources */,
+				AF6AE8F9290915B4001D1947 /* SideBarMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF89987328E8A74C00FE3795 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -464,9 +605,10 @@
 				AF3E36C228F533E7000AE6A8 /* PositiveButtonModifier.swift in Sources */,
 				AF3E36C428F534BA000AE6A8 /* View.swift in Sources */,
 				AF38E3AF28FBFBF10089795D /* ProductMockDataService.swift in Sources */,
+				AF6AE8FB29091B61001D1947 /* ProductModel.swift in Sources */,
 				AF38E3B828FC0F3C0089795D /* CartView.swift in Sources */,
 				AF38E3BA28FC15A00089795D /* SectionTitleModifier.swift in Sources */,
-				AF448FC928F457340012FE3E /* FoodIngredients.swift in Sources */,
+				AF448FC928F457340012FE3E /* FoodIngredient.swift in Sources */,
 				AF3E36BD28F48158000AE6A8 /* ProductDetailViewOldStyle.swift in Sources */,
 				AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */,
 				AFBF9B9428FAAE61003A0E7F /* ProductDetailViewModel.swift in Sources */,
@@ -532,6 +674,64 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = BowlShopSwiftUI;
+			};
+			name = Release;
+		};
+		AF6AE8EB29091052001D1947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AdminSwiftUI_Mac/AdminSwiftUI_Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AdminSwiftUI_Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = SHP38F3EM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "barisozgen.AdminSwiftUI-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AF6AE8EC29091052001D1947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AdminSwiftUI_Mac/AdminSwiftUI_Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AdminSwiftUI_Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = SHP38F3EM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "barisozgen.AdminSwiftUI-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -755,6 +955,15 @@
 			buildConfigurations = (
 				AF38E3CE28FD445A0089795D /* Debug */,
 				AF38E3CF28FD445A0089795D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF6AE8ED29091052001D1947 /* Build configuration list for PBXNativeTarget "AdminSwiftUI_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6AE8EB29091052001D1947 /* Debug */,
+				AF6AE8EC29091052001D1947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

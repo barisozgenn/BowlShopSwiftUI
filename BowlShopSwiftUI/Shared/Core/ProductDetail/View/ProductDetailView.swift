@@ -23,6 +23,7 @@ struct ProductDetailView: View {
     @State private var imageFrame: [CGFloat] = [84.0, 92.0]
     private let viewWidth = UIScreen.main.bounds.width - 72.0
     private let productExtraInformationViewY = UIScreen.main.bounds.height
+    @State private var zoomAmount : CGFloat = 0
     
     @State var viewState = CGSize.zero
     
@@ -170,6 +171,7 @@ extension ProductDetailView {
                     .padding(.horizontal, 7)
                     .tag(0)
                     .accessibilityIdentifier("image1")
+                   
                 Image("smoked-salmon-poke-bowl3")
                     .resizable()
                     .scaledToFit()
@@ -181,6 +183,18 @@ extension ProductDetailView {
             }
             .tabViewStyle(.page(indexDisplayMode:  !productExtraInformationViewShown ? .automatic : .never))
             .accessibilityIdentifier("imagesTabView")
+            .scaleEffect(1 + zoomAmount)
+            .gesture(
+                MagnificationGesture()
+                    .onChanged{ currentAmount in
+                        zoomAmount = currentAmount - 1
+                    }
+                    .onEnded{_  in
+                        withAnimation(.spring()){
+                            zoomAmount = 0
+                        }
+                    }
+            )
         }
         .frame(width: imageFrame.first, height:  imageFrame.last)
         .padding(.vertical, productExtraInformationViewShown ? 10 : -14)
