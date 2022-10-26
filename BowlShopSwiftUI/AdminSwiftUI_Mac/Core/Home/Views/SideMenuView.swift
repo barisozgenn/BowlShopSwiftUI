@@ -16,6 +16,7 @@ struct SideMenuView: View {
             }
         }
         .listStyle(.sidebar)
+        .navigationTitle("Menu")
     }
 }
 

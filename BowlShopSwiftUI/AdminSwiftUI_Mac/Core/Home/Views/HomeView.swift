@@ -10,11 +10,10 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var columnVisibility =
-    NavigationSplitViewVisibility.detailOnly
+    NavigationSplitViewVisibility.doubleColumn
     
     var body: some View {
         sideBarMenu
-        
     }
 }
 
@@ -24,6 +23,10 @@ extension HomeView {
         NavigationSplitView(columnVisibility: $columnVisibility){
            SideMenuView()
         }
+    content: {
+        SideMenuView()
+            .navigationTitle("Menu")
+    }
         detail: {
             
         }
