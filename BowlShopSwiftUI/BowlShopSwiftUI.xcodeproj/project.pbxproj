@@ -24,6 +24,8 @@
 		AF3E36C428F534BA000AE6A8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E36C328F534BA000AE6A8 /* View.swift */; };
 		AF3E36C628F6AA65000AE6A8 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E36C528F6AA65000AE6A8 /* ProductDetailView.swift */; };
 		AF448FC928F457340012FE3E /* FoodIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF448FC828F457340012FE3E /* FoodIngredient.swift */; };
+		AF4720B6290E5F3600E41F7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4720B5290E5F3600E41F7F /* LoginViewModel.swift */; };
+		AF4720B8290E5FAA00E41F7F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4720B7290E5FAA00E41F7F /* LoginView.swift */; };
 		AF48CA0D290BE53000491ADE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48CA0C290BE53000491ADE /* LoginView.swift */; };
 		AF48CA0F290D190900491ADE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48CA0E290D190900491ADE /* LoginViewModel.swift */; };
 		AF48CA10290D50B900491ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89987E28E8A74D00FE3795 /* Assets.xcassets */; };
@@ -112,6 +114,8 @@
 		AF3E36C328F534BA000AE6A8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		AF3E36C528F6AA65000AE6A8 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		AF448FC828F457340012FE3E /* FoodIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIngredient.swift; sourceTree = "<group>"; };
+		AF4720B5290E5F3600E41F7F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AF4720B7290E5FAA00E41F7F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AF48CA0C290BE53000491ADE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AF48CA0E290D190900491ADE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AF48CA11290DA00600491ADE /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -321,6 +325,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AF4720B2290E5ED100E41F7F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AF4720B4290E5EE200E41F7F /* Views */,
+				AF4720B3290E5EDD00E41F7F /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AF4720B3290E5EDD00E41F7F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF4720B5290E5F3600E41F7F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF4720B4290E5EE200E41F7F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF4720B7290E5FAA00E41F7F /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AF48CA09290BE4E400491ADE /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +475,7 @@
 		AF6AE8EF2909108A001D1947 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AF4720B2290E5ED100E41F7F /* Login */,
 				AF53CB162909A7AC00623763 /* EditProduct */,
 				AF6AE8F02909108E001D1947 /* Home */,
 			);
@@ -761,6 +791,7 @@
 				AF53CB30290A5B8F00623763 /* MockOnlineOrderService.swift in Sources */,
 				AF6AE9002909389D001D1947 /* OrderProtocol.swift in Sources */,
 				AF6AE8FC29091B61001D1947 /* ProductModel.swift in Sources */,
+				AF4720B8290E5FAA00E41F7F /* LoginView.swift in Sources */,
 				AF6AE90A29093F4C001D1947 /* RestaurantOrderModel.swift in Sources */,
 				AF6AE8F4290910A6001D1947 /* HomeView.swift in Sources */,
 				AF53CB37290A746900623763 /* MockRestaurantOrderService.swift in Sources */,
@@ -773,6 +804,7 @@
 				AF6AE90329093987001D1947 /* DeliveryStatus.swift in Sources */,
 				AF53CB26290A544C00623763 /* OnlineOrderServiceProtocol.swift in Sources */,
 				AF6AE90E290942F4001D1947 /* UserModel.swift in Sources */,
+				AF4720B6290E5F3600E41F7F /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

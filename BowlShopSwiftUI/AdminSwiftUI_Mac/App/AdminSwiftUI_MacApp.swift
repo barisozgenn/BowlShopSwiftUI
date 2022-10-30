@@ -11,7 +11,7 @@ import SwiftUI
 struct AdminSwiftUI_MacApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            LoginView()
         }
     }
 }

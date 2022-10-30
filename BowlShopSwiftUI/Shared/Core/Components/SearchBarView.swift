@@ -20,12 +20,12 @@ struct SearchBarView: View {
                 
                 TextField("Search...", text:$searchText)
                     .disableAutocorrection(true)
-                    .foregroundColor(Color(.darkText))
+                    .foregroundColor(Color(.darkGray))
                     .overlay(
                         Image(systemName: "xmark.circle.fill")
                             .padding()
                             .offset(x: 14)
-                            .foregroundColor(Color(.darkText))
+                            .foregroundColor(Color(.darkGray))
                             .opacity(
                                 searchText.isEmpty ?
                                 0 : 0.6)

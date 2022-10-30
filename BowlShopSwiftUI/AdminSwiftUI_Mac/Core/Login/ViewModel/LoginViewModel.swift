@@ -1,14 +1,15 @@
 //
 //  LoginViewModel.swift
-//  BowlShopSwiftUI
+//  AdminSwiftUI_Mac
 //
-//  Created by Baris OZGEN on 29.10.2022.
+//  Created by Baris OZGEN on 30.10.2022.
 //
+
 
 import Combine
 class LoginViewModel: ObservableObject {
     @Published var loginStep : ELoginStep = .phone
-    @Published var padNumbers = ["1","2","3","4","5","6","7","8","9","","0","delete.left"]
+    @Published var padNumbers = ["1","2","3","4","5","6","7","8","9","0","delete.left"]
     @Published var phoneCountryCodeText: String = "49"
     @Published var phoneNumberText: String = ""
     @Published var otpText: String = ""
@@ -79,3 +80,4 @@ class LoginViewModel: ObservableObject {
         case otp
     }
 }
+
