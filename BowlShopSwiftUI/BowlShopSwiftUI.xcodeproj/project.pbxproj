@@ -32,6 +32,24 @@
 		AF48CA12290DA00600491ADE /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48CA11290DA00600491ADE /* SearchBarView.swift */; };
 		AF48CA13290DA00600491ADE /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48CA11290DA00600491ADE /* SearchBarView.swift */; };
 		AF48CA15290DA16300491ADE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48CA14290DA16300491ADE /* UIApplication.swift */; };
+		AF5327902910ED43006004F5 /* GraphQLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53278F2910ED43006004F5 /* GraphQLNetworkManager.swift */; };
+		AF5327912910ED43006004F5 /* GraphQLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53278F2910ED43006004F5 /* GraphQLNetworkManager.swift */; };
+		AF53279629112A16006004F5 /* CountrySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279529112A16006004F5 /* CountrySelectionView.swift */; };
+		AF53279729112A16006004F5 /* CountrySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279529112A16006004F5 /* CountrySelectionView.swift */; };
+		AF53279929112A46006004F5 /* CountrySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279829112A46006004F5 /* CountrySelectionViewModel.swift */; };
+		AF53279A29112A46006004F5 /* CountrySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279829112A46006004F5 /* CountrySelectionViewModel.swift */; };
+		AF53279C291130F3006004F5 /* LayzNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279B291130F3006004F5 /* LayzNavigationView.swift */; };
+		AF53279D291130F3006004F5 /* LayzNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279B291130F3006004F5 /* LayzNavigationView.swift */; };
+		AF53279F29113115006004F5 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279E29113115006004F5 /* ImageDownloadService.swift */; };
+		AF5327A029113115006004F5 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53279E29113115006004F5 /* ImageDownloadService.swift */; };
+		AF5327A22911317D006004F5 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327A12911317D006004F5 /* LocalFileManager.swift */; };
+		AF5327A32911317D006004F5 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327A12911317D006004F5 /* LocalFileManager.swift */; };
+		AF5327A52911348B006004F5 /* DownloadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327A42911348B006004F5 /* DownloadedImageView.swift */; };
+		AF5327A62911348B006004F5 /* DownloadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327A42911348B006004F5 /* DownloadedImageView.swift */; };
+		AF5327A9291134F6006004F5 /* DownloadedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327A8291134F6006004F5 /* DownloadedImageViewModel.swift */; };
+		AF5327AA291134F6006004F5 /* DownloadedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327A8291134F6006004F5 /* DownloadedImageViewModel.swift */; };
+		AF5327AC29113FB7006004F5 /* CountrySelectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327AB29113FB7006004F5 /* CountrySelectionCellView.swift */; };
+		AF5327AD29113FB7006004F5 /* CountrySelectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327AB29113FB7006004F5 /* CountrySelectionCellView.swift */; };
 		AF53CB1A2909A7D500623763 /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53CB192909A7D500623763 /* EditProductView.swift */; };
 		AF53CB1D290A51FF00623763 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53CB1C290A51FF00623763 /* NetworkManager.swift */; };
 		AF53CB1E290A51FF00623763 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF53CB1C290A51FF00623763 /* NetworkManager.swift */; };
@@ -66,6 +84,8 @@
 		AF6AE90E290942F4001D1947 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE90C290942F4001D1947 /* UserModel.swift */; };
 		AF6AE91029094305001D1947 /* UserAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE90F29094305001D1947 /* UserAddressModel.swift */; };
 		AF6AE91129094305001D1947 /* UserAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE90F29094305001D1947 /* UserAddressModel.swift */; };
+		AF78DE5229119ACC0014B2AE /* CountryGraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */; };
+		AF78DE5329119ACC0014B2AE /* CountryGraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */; };
 		AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */; };
 		AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89987E28E8A74D00FE3795 /* Assets.xcassets */; };
 		AF89988228E8A74D00FE3795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89988128E8A74D00FE3795 /* Preview Assets.xcassets */; };
@@ -126,6 +146,15 @@
 		AF48CA0E290D190900491ADE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AF48CA11290DA00600491ADE /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		AF48CA14290DA16300491ADE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		AF53278F2910ED43006004F5 /* GraphQLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLNetworkManager.swift; sourceTree = "<group>"; };
+		AF53279529112A16006004F5 /* CountrySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionView.swift; sourceTree = "<group>"; };
+		AF53279829112A46006004F5 /* CountrySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewModel.swift; sourceTree = "<group>"; };
+		AF53279B291130F3006004F5 /* LayzNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayzNavigationView.swift; sourceTree = "<group>"; };
+		AF53279E29113115006004F5 /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
+		AF5327A12911317D006004F5 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		AF5327A42911348B006004F5 /* DownloadedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedImageView.swift; sourceTree = "<group>"; };
+		AF5327A8291134F6006004F5 /* DownloadedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedImageViewModel.swift; sourceTree = "<group>"; };
+		AF5327AB29113FB7006004F5 /* CountrySelectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionCellView.swift; sourceTree = "<group>"; };
 		AF53CB192909A7D500623763 /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
 		AF53CB1C290A51FF00623763 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AF53CB21290A536C00623763 /* OnlineOrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineOrderService.swift; sourceTree = "<group>"; };
@@ -148,6 +177,7 @@
 		AF6AE90829093F4C001D1947 /* RestaurantOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOrderModel.swift; sourceTree = "<group>"; };
 		AF6AE90C290942F4001D1947 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF6AE90F29094305001D1947 /* UserAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressModel.swift; sourceTree = "<group>"; };
+		AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGraphQLService.swift; sourceTree = "<group>"; };
 		AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlShopSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIApp.swift; sourceTree = "<group>"; };
 		AF89987E28E8A74D00FE3795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +230,8 @@
 		AF289BEC28F81D24003D58A3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF5327A12911317D006004F5 /* LocalFileManager.swift */,
+				AF53279B291130F3006004F5 /* LayzNavigationView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -207,6 +239,7 @@
 		AF38E3AB28FBFBBA0089795D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AF53279E29113115006004F5 /* ImageDownloadService.swift */,
 				AF53CB31290A742700623763 /* RestaurantOrder */,
 				AF53CB20290A534A00623763 /* OnlineOrder */,
 				AF53CB1F290A533D00623763 /* Product */,
@@ -255,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3E36BE28F53305000AE6A8 /* Components */,
+				AF532792291129D6006004F5 /* Countries */,
 				AF48CA09290BE4E400491ADE /* Login */,
 				AF38E3B228FC0EFF0089795D /* Cart */,
 				AF3E36B928F4812D000AE6A8 /* ProductDetail */,
@@ -291,6 +325,7 @@
 		AF3E36BE28F53305000AE6A8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AF5327A7291134D7006004F5 /* DownloadedImage */,
 				AF3E36BF28F53398000AE6A8 /* PositiveButtonStyle.swift */,
 				AF3E36C128F533E7000AE6A8 /* PositiveButtonModifier.swift */,
 				AF38E3B928FC15A00089795D /* SectionTitleModifier.swift */,
@@ -384,6 +419,41 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		AF532792291129D6006004F5 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				AF532794291129E7006004F5 /* ViewModel */,
+				AF532793291129DF006004F5 /* Views */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		AF532793291129DF006004F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF53279529112A16006004F5 /* CountrySelectionView.swift */,
+				AF5327AB29113FB7006004F5 /* CountrySelectionCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF532794291129E7006004F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF53279829112A46006004F5 /* CountrySelectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF5327A7291134D7006004F5 /* DownloadedImage */ = {
+			isa = PBXGroup;
+			children = (
+				AF5327A42911348B006004F5 /* DownloadedImageView.swift */,
+				AF5327A8291134F6006004F5 /* DownloadedImageViewModel.swift */,
+			);
+			path = DownloadedImage;
+			sourceTree = "<group>";
+		};
 		AF53CB162909A7AC00623763 /* EditProduct */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +508,7 @@
 		AF53CB2A290A58B300623763 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				AF53278F2910ED43006004F5 /* GraphQLNetworkManager.swift */,
 				AF53CB1C290A51FF00623763 /* NetworkManager.swift */,
 			);
 			path = NetworkManager;
@@ -543,12 +614,21 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		AF78DE5429119F810014B2AE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		AF84B99428FDD64200851428 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
 				AFDAF62529103ADE008E0A37 /* GraphQLAPI.swift */,
 				AFDAF61429103776008E0A37 /* queriesCountry.graphql */,
 				AFDAF61529103776008E0A37 /* schemaCountry.graphql */,
+				AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -580,8 +660,8 @@
 		AF89987928E8A74C00FE3795 /* BowlShopSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				AF78DE5429119F810014B2AE /* App */,
 				AFC3F95B28F7493200C36449 /* videos */,
-				AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */,
 				AF89987E28E8A74D00FE3795 /* Assets.xcassets */,
 				AF89988028E8A74D00FE3795 /* Preview Content */,
 			);
@@ -832,28 +912,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF48CA13290DA00600491ADE /* SearchBarView.swift in Sources */,
+				AF5327912910ED43006004F5 /* GraphQLNetworkManager.swift in Sources */,
 				AF6AE8FD29091D08001D1947 /* FoodIngredient.swift in Sources */,
+				AF78DE5329119ACC0014B2AE /* CountryGraphQLService.swift in Sources */,
 				AF53CB1A2909A7D500623763 /* EditProductView.swift in Sources */,
 				AF6AE8E229091051001D1947 /* AdminSwiftUI_MacApp.swift in Sources */,
+				AF5327A029113115006004F5 /* ImageDownloadService.swift in Sources */,
 				AF6AE8F629091444001D1947 /* SideMenuView.swift in Sources */,
 				AF53CB30290A5B8F00623763 /* MockOnlineOrderService.swift in Sources */,
 				AF6AE9002909389D001D1947 /* OrderProtocol.swift in Sources */,
 				AF6AE8FC29091B61001D1947 /* ProductModel.swift in Sources */,
 				AF4720B8290E5FAA00E41F7F /* LoginView.swift in Sources */,
+				AF53279A29112A46006004F5 /* CountrySelectionViewModel.swift in Sources */,
 				AF6AE90A29093F4C001D1947 /* RestaurantOrderModel.swift in Sources */,
+				AF5327A62911348B006004F5 /* DownloadedImageView.swift in Sources */,
+				AF5327AD29113FB7006004F5 /* CountrySelectionCellView.swift in Sources */,
 				AF6AE8F4290910A6001D1947 /* HomeView.swift in Sources */,
 				AF53CB37290A746900623763 /* MockRestaurantOrderService.swift in Sources */,
+				AF53279D291130F3006004F5 /* LayzNavigationView.swift in Sources */,
 				AF6AE90729093F35001D1947 /* OnlineOrderModel.swift in Sources */,
 				AF6AE8F9290915B4001D1947 /* SideBarMenu.swift in Sources */,
 				AF53CB1E290A51FF00623763 /* NetworkManager.swift in Sources */,
 				AF53CB23290A536C00623763 /* OnlineOrderService.swift in Sources */,
 				AFDAF62729103ADE008E0A37 /* GraphQLAPI.swift in Sources */,
 				AF53CB34290A743D00623763 /* RestaurantOrderServiceProtocol.swift in Sources */,
+				AF5327A32911317D006004F5 /* LocalFileManager.swift in Sources */,
+				AF5327AA291134F6006004F5 /* DownloadedImageViewModel.swift in Sources */,
 				AF6AE91129094305001D1947 /* UserAddressModel.swift in Sources */,
 				AF6AE90329093987001D1947 /* DeliveryStatus.swift in Sources */,
 				AF53CB26290A544C00623763 /* OnlineOrderServiceProtocol.swift in Sources */,
 				AF6AE90E290942F4001D1947 /* UserModel.swift in Sources */,
 				AF4720B6290E5F3600E41F7F /* LoginViewModel.swift in Sources */,
+				AF53279729112A16006004F5 /* CountrySelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,10 +951,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF53279929112A46006004F5 /* CountrySelectionViewModel.swift in Sources */,
 				AF48CA15290DA16300491ADE /* UIApplication.swift in Sources */,
 				AF53CB1D290A51FF00623763 /* NetworkManager.swift in Sources */,
+				AF5327A52911348B006004F5 /* DownloadedImageView.swift in Sources */,
 				AF48CA0D290BE53000491ADE /* LoginView.swift in Sources */,
 				AF6AE8FF2909389D001D1947 /* OrderProtocol.swift in Sources */,
+				AF5327A9291134F6006004F5 /* DownloadedImageViewModel.swift in Sources */,
+				AF53279F29113115006004F5 /* ImageDownloadService.swift in Sources */,
 				AF6AE91029094305001D1947 /* UserAddressModel.swift in Sources */,
 				AF6AE90D290942F4001D1947 /* UserModel.swift in Sources */,
 				AF38E3AD28FBFBDB0089795D /* ProductDataServiceProtocol.swift in Sources */,
@@ -873,7 +967,10 @@
 				AF48CA0F290D190900491ADE /* LoginViewModel.swift in Sources */,
 				AF38E3BE28FC517F0089795D /* CartViewModel.swift in Sources */,
 				AF38E3C028FD338B0089795D /* PaymentStatus.swift in Sources */,
+				AF5327A22911317D006004F5 /* LocalFileManager.swift in Sources */,
+				AF78DE5229119ACC0014B2AE /* CountryGraphQLService.swift in Sources */,
 				AF3E36C028F53398000AE6A8 /* PositiveButtonStyle.swift in Sources */,
+				AF5327902910ED43006004F5 /* GraphQLNetworkManager.swift in Sources */,
 				AF6AE90629093F35001D1947 /* OnlineOrderModel.swift in Sources */,
 				AF3E36C628F6AA65000AE6A8 /* ProductDetailView.swift in Sources */,
 				AF3E36C228F533E7000AE6A8 /* PositiveButtonModifier.swift in Sources */,
@@ -889,8 +986,11 @@
 				AF448FC928F457340012FE3E /* FoodIngredient.swift in Sources */,
 				AF53CB25290A544C00623763 /* OnlineOrderServiceProtocol.swift in Sources */,
 				AF6AE90929093F4C001D1947 /* RestaurantOrderModel.swift in Sources */,
+				AF5327AC29113FB7006004F5 /* CountrySelectionCellView.swift in Sources */,
+				AF53279629112A16006004F5 /* CountrySelectionView.swift in Sources */,
 				AF3E36BD28F48158000AE6A8 /* ProductDetailViewOldStyle.swift in Sources */,
 				AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */,
+				AF53279C291130F3006004F5 /* LayzNavigationView.swift in Sources */,
 				AFBF9B9428FAAE61003A0E7F /* ProductDetailViewModel.swift in Sources */,
 				AF53CB36290A746900623763 /* MockRestaurantOrderService.swift in Sources */,
 				AF6AE90229093987001D1947 /* DeliveryStatus.swift in Sources */,
