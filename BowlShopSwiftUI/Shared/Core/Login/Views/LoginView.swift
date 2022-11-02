@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var vm = LoginViewModel()
+    @State var countrySelectionViewVisiblity : Bool = false
     
     private let gridItem = GridItem(.flexible(), spacing: 14)
     var body: some View {
@@ -78,8 +79,20 @@ extension LoginView {
                         .padding(.vertical,4)
                         .foregroundColor(vm.warningPhoneNumberText.isEmpty ? .gray : .orange)
                     HStack{
-                        Image(systemName: "person.crop.rectangle.fill")
-                        Text("+\(vm.phoneCountryCodeText)")
+                        HStack{
+                            Text(vm.selectedCountry.emoji)
+                            Text("+\(vm.selectedCountry.phone)")
+                        }
+                        .onTapGesture {
+                            countrySelectionViewVisiblity.toggle()
+                        }
+                        .sheet(isPresented: $countrySelectionViewVisiblity){
+                            CountrySelectionView(selectedCountry: $vm.selectedCountry)
+                                .accessibilityIdentifier("countrySelectionView")
+                                .presentationDetents([.height(292), .fraction(0.52), .fraction(0.7)])
+                                .presentationDragIndicator(.visible)
+                        }
+                        
                         Text(vm.phoneNumberText)
                             .lineLimit(1)
                             .frame(maxWidth: 150, alignment: .leading)

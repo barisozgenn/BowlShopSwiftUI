@@ -46,6 +46,10 @@ class CountrySelectionViewModel : ObservableObject {
             .map(searchCountries)
             .sink{[weak self] (searchedCountries) in
                 self?.countries = searchedCountries
+                
+                /*if let selectedCountry = self?.selectedCountry {
+                    self?.countries.insert(selectedCountry, at: 0)
+                }*/
             }
             .store(in: &cancellables)
     }
@@ -69,7 +73,13 @@ class CountrySelectionViewModel : ObservableObject {
         return filteredCountries
     }
     
-    func selectCounty(country: CountriesQuery.Data.Country){
+    func selectCountyCode(selectedCountryCode: String){
+        guard let selectedCountry = countries.first(where: {$0.code == selectedCountryCode}) else {return}
+        selectCounty(country: selectedCountry)
+    }
+    private func selectCounty(country: CountriesQuery.Data.Country){
         selectedCountry = country
+        //countries.remove(at: 0)
+        //countries.insert(selectedCountry, at: 0)
     }
 }

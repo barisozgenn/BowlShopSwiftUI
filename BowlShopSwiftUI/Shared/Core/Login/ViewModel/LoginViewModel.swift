@@ -16,6 +16,8 @@ class LoginViewModel: ObservableObject {
     @Published var warningPhoneNumberText: String = ""
     @Published var warningOtpText: String = ""
     
+    @Published var selectedCountry = CountriesQuery.Data.Country(code: "DE", name: "Germany", emoji: "🇩🇪", phone: "49")
+    
     //MARK: Phone Number Section
     func setPhoneNumberText(keyTag: String){
         

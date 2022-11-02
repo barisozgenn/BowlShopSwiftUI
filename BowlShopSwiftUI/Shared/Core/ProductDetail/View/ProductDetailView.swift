@@ -171,7 +171,7 @@ extension ProductDetailView {
                     .padding(.horizontal, 7)
                     .tag(0)
                     .accessibilityIdentifier("image1")
-                   
+                
                 Image("smoked-salmon-poke-bowl3")
                     .resizable()
                     .scaledToFit()
@@ -339,8 +339,8 @@ extension ProductDetailView {
                     CartView()
                         .accessibilityIdentifier("cardViewPageBottom")
                         .presentationDetents([.height(100), .fraction(0.955)])
-             .presentationDragIndicator(.hidden)
-             }
+                        .presentationDragIndicator(.hidden)
+                }
             }
         }
         .opacity(viewState.height > -80 ? 1 : 0)

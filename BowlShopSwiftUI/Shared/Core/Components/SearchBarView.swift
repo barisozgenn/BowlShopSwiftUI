@@ -37,6 +37,7 @@ struct SearchBarView: View {
                             }
                         ,alignment: .trailing
                     )
+                    .textFieldStyle(.plain)
             }
             .font(.headline)
             .padding()
@@ -44,8 +45,8 @@ struct SearchBarView: View {
                 RoundedRectangle(cornerRadius: 14)
                     .fill(.white)
                     .shadow(
-                        color: .black.opacity(0.58),
-                        radius: 14,x: 0, y: 7
+                        color: .black.opacity(0.29),
+                        radius: 7,x: 0, y: 7
                     )
             )
         }

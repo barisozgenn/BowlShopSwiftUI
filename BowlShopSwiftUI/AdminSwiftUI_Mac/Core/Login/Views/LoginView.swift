@@ -8,7 +8,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var vm = LoginViewModel()
-    
+
     private let gridItem = GridItem(.flexible(), spacing: 14)
     var body: some View {
         ZStack(alignment: .top){
@@ -97,8 +97,10 @@ extension LoginView {
                         .padding(.vertical,4)
                         .foregroundColor(vm.warningPhoneNumberText.isEmpty ? .gray : .orange)
                     HStack{
-                        Image(systemName: "person.crop.rectangle.fill")
-                        Text("+\(vm.phoneCountryCodeText)")
+                        HStack{
+                            Text(vm.selectedCountry.emoji)
+                            Text("+\(vm.selectedCountry.phone)")
+                        }
                         Text(vm.phoneNumberText)
                             .lineLimit(1)
                             .frame(maxWidth: 150, alignment: .leading)
