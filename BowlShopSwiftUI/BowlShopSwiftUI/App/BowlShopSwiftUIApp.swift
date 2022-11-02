@@ -10,6 +10,10 @@ import SwiftUI
 @main
 struct BowlShopSwiftUIApp: App {
     
+    // register app delegate for Firebase setup
+     @UIApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
+
+    
     let userLogin: Bool
     
     init(){

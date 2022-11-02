@@ -86,6 +86,13 @@
 		AF6AE91129094305001D1947 /* UserAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AE90F29094305001D1947 /* UserAddressModel.swift */; };
 		AF78DE5229119ACC0014B2AE /* CountryGraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */; };
 		AF78DE5329119ACC0014B2AE /* CountryGraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */; };
+		AF792B1529129A5500641BA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF792B1429129A5400641BA6 /* GoogleService-Info.plist */; };
+		AF792B1629129A5500641BA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF792B1429129A5400641BA6 /* GoogleService-Info.plist */; };
+		AF792B1929129F2800641BA6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B1829129F2800641BA6 /* FirebaseAuth */; };
+		AF792B1B29129F2800641BA6 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B1A29129F2800641BA6 /* FirebaseAuthCombine-Community */; };
+		AF792B1D29129F2800641BA6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B1C29129F2800641BA6 /* FirebaseDatabase */; };
+		AF792B1F29129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */; };
+		AF792B2029129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */; };
 		AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */; };
 		AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89987E28E8A74D00FE3795 /* Assets.xcassets */; };
 		AF89988228E8A74D00FE3795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89988128E8A74D00FE3795 /* Preview Assets.xcassets */; };
@@ -178,6 +185,9 @@
 		AF6AE90C290942F4001D1947 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF6AE90F29094305001D1947 /* UserAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressModel.swift; sourceTree = "<group>"; };
 		AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGraphQLService.swift; sourceTree = "<group>"; };
+		AF792B1429129A5400641BA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAppDelegate.swift; sourceTree = "<group>"; };
+		AF792B212912A1E100641BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlShopSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIApp.swift; sourceTree = "<group>"; };
 		AF89987E28E8A74D00FE3795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDAF62929103AEF008E0A37 /* Apollo in Frameworks */,
+				AF792B1B29129F2800641BA6 /* FirebaseAuthCombine-Community in Frameworks */,
+				AF792B1D29129F2800641BA6 /* FirebaseDatabase in Frameworks */,
+				AF792B1929129F2800641BA6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +243,10 @@
 		AF289BEC28F81D24003D58A3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF792B1429129A5400641BA6 /* GoogleService-Info.plist */,
 				AF5327A12911317D006004F5 /* LocalFileManager.swift */,
 				AF53279B291130F3006004F5 /* LayzNavigationView.swift */,
+				AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -526,9 +541,9 @@
 		AF6AE8E029091051001D1947 /* AdminSwiftUI_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				AF6AE8EE2909106C001D1947 /* App */,
 				AF6AE8F729091597001D1947 /* Model */,
 				AF6AE8EF2909108A001D1947 /* Core */,
-				AF6AE8EE2909106C001D1947 /* App */,
 				AF6AE8E529091052001D1947 /* Assets.xcassets */,
 				AF6AE8EA29091052001D1947 /* AdminSwiftUI_Mac.entitlements */,
 				AF6AE8E729091052001D1947 /* Preview Content */,
@@ -660,6 +675,7 @@
 		AF89987928E8A74C00FE3795 /* BowlShopSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				AF792B212912A1E100641BA6 /* Info.plist */,
 				AF78DE5429119F810014B2AE /* App */,
 				AFC3F95B28F7493200C36449 /* videos */,
 				AF89987E28E8A74D00FE3795 /* Assets.xcassets */,
@@ -759,6 +775,9 @@
 			name = BowlShopSwiftUI;
 			packageProductDependencies = (
 				AFDAF62829103AEF008E0A37 /* Apollo */,
+				AF792B1829129F2800641BA6 /* FirebaseAuth */,
+				AF792B1A29129F2800641BA6 /* FirebaseAuthCombine-Community */,
+				AF792B1C29129F2800641BA6 /* FirebaseDatabase */,
 			);
 			productName = BowlShopSwiftUI;
 			productReference = AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */;
@@ -819,6 +838,7 @@
 			mainGroup = AF89986E28E8A74C00FE3795;
 			packageReferences = (
 				AFDAF61D291039D6008E0A37 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = AF89987828E8A74C00FE3795 /* Products */;
 			projectDirPath = "";
@@ -849,6 +869,7 @@
 				AFDAF61729103776008E0A37 /* queriesCountry.graphql in Resources */,
 				AF48CA10290D50B900491ADE /* Assets.xcassets in Resources */,
 				AF6AE8E629091052001D1947 /* Assets.xcassets in Resources */,
+				AF792B1629129A5500641BA6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,6 +883,7 @@
 				AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */,
 				AFC3F95E28F7494E00C36449 /* video2.mp4 in Resources */,
 				AFDAF61829103776008E0A37 /* schemaCountry.graphql in Resources */,
+				AF792B1529129A5500641BA6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +960,7 @@
 				AF53CB34290A743D00623763 /* RestaurantOrderServiceProtocol.swift in Sources */,
 				AF5327A32911317D006004F5 /* LocalFileManager.swift in Sources */,
 				AF5327AA291134F6006004F5 /* DownloadedImageViewModel.swift in Sources */,
+				AF792B2029129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */,
 				AF6AE91129094305001D1947 /* UserAddressModel.swift in Sources */,
 				AF6AE90329093987001D1947 /* DeliveryStatus.swift in Sources */,
 				AF53CB26290A544C00623763 /* OnlineOrderServiceProtocol.swift in Sources */,
@@ -968,6 +991,7 @@
 				AF38E3BE28FC517F0089795D /* CartViewModel.swift in Sources */,
 				AF38E3C028FD338B0089795D /* PaymentStatus.swift in Sources */,
 				AF5327A22911317D006004F5 /* LocalFileManager.swift in Sources */,
+				AF792B1F29129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */,
 				AF78DE5229119ACC0014B2AE /* CountryGraphQLService.swift in Sources */,
 				AF3E36C028F53398000AE6A8 /* PositiveButtonStyle.swift in Sources */,
 				AF5327902910ED43006004F5 /* GraphQLNetworkManager.swift in Sources */,
@@ -1244,6 +1268,7 @@
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BowlShopSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1274,6 +1299,7 @@
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BowlShopSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1382,6 +1408,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 9.6.0;
+			};
+		};
 		AFDAF61D291039D6008E0A37 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -1393,6 +1427,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AF792B1829129F2800641BA6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AF792B1A29129F2800641BA6 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		AF792B1C29129F2800641BA6 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		AFDAF61E291039D6008E0A37 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AFDAF61D291039D6008E0A37 /* XCRemoteSwiftPackageReference "apollo-ios" */;

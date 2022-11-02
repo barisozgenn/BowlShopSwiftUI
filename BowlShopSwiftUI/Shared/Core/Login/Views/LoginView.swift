@@ -13,6 +13,8 @@ struct LoginView: View {
     
     private let gridItem = GridItem(.flexible(), spacing: 14)
     var body: some View {
+        
+        // Login Views
         VStack{
             headerView
             ZStack{
@@ -22,6 +24,10 @@ struct LoginView: View {
             
             keyboardView
         }
+        .cornerRadius(29)
+        .clipped()
+        .scaleEffect(0.7)
+        .rotation3DEffect(.degrees(-45), axis:(x: 0, y: 1, z: 0))
     }
 }
 

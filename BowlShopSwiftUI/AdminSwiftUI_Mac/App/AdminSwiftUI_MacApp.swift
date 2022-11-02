@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct AdminSwiftUI_MacApp: App {
+    // register app delegate for Firebase setup
+     @UIApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             LoginView()

@@ -5,7 +5,8 @@
 //  Created by Baris OZGEN on 29.10.2022.
 //
 
-import Combine
+import Firebase
+
 class LoginViewModel: ObservableObject {
     @Published var loginStep : ELoginStep = .phone
     @Published var padNumbers = ["1","2","3","4","5","6","7","8","9","","0","delete.left"]
@@ -17,6 +18,8 @@ class LoginViewModel: ObservableObject {
     @Published var warningOtpText: String = ""
     
     @Published var selectedCountry = CountriesQuery.Data.Country(code: "DE", name: "Germany", emoji: "🇩🇪", phone: "49")
+    
+    private var recievedOTPText: String = ""
     
     //MARK: Phone Number Section
     func setPhoneNumberText(keyTag: String){
@@ -46,6 +49,21 @@ class LoginViewModel: ObservableObject {
         }
         warningPhoneNumberText = ""
         loginStep = .otp
+        
+        // For testing we define it true, when the real message is required we need to make it false
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        
+        let phoneNumber = "+\(selectedCountry.phone)\(phoneNumberText)"
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil){ [weak self] (verificationCode, error) in
+            if let error = error {
+                self?.warningPhoneNumberText = error.localizedDescription
+                return
+            }
+            
+            guard let recievedOTPText = verificationCode else {return}
+            self?.recievedOTPText = recievedOTPText
+        }
     }
     
     // MARK: OTP Section
@@ -69,11 +87,30 @@ class LoginViewModel: ObservableObject {
     }
     
     func sendOTPButton(){
-        if phoneNumberText.count != 6 {
+        if otpText.count != 6 {
             warningOtpText = "⚠ Invalid confirmation code"
             return
         }
         warningOtpText = ""
+        
+        if otpText != recievedOTPText {
+            otpText = ""
+            warningOtpText = "⚠ Confirmation code doesn't match"
+            return
+        }
+        
+        let credential = PhoneAuthProvider.provider().credential(
+            withVerificationID: recievedOTPText,
+            verificationCode: otpText)
+        
+        Auth.auth().signIn(with: credential) { [weak self] (result, error) in
+            if let error = error {
+                self?.warningPhoneNumberText = error.localizedDescription
+                return
+            }
+            // here: user logged in
+        }
+        
     }
     
     enum ELoginStep : Int {
