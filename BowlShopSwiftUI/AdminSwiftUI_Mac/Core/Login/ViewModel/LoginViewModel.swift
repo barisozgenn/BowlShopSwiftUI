@@ -18,7 +18,9 @@ class LoginViewModel: ObservableObject {
     @Published var warningOtpText: String = ""
     
     @Published var selectedCountry = CountriesQuery.Data.Country(code: "DE", name: "Germany", emoji: "🇩🇪", phone: "49")
-
+    
+    private var recievedOTPText: String = ""
+    
     //MARK: Phone Number Section
     func setPhoneNumberText(keyTag: String){
         
@@ -53,15 +55,15 @@ class LoginViewModel: ObservableObject {
         
         let phoneNumber = "+\(selectedCountry.phone)\(phoneNumberText)"
         
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil){ [weak self] (verificationCode, error) in
-            if let error = error {
-                self?.warningPhoneNumberText = error.localizedDescription
-                return
-            }
+       /* PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil){ [weak self] (verificationCode, error) in
+        if let error = error {
+            self?.warningOtpText = error.localizedDescription
+            return
+        }
             
             guard let recievedOTPText = verificationCode else {return}
             self?.recievedOTPText = recievedOTPText
-        }
+        }*/
     }
     
     // MARK: OTP Section
@@ -97,7 +99,7 @@ class LoginViewModel: ObservableObject {
             return
         }
         
-        let credential = PhoneAuthProvider.provider().credential(
+       /* let credential = PhoneAuthProvider.provider().credential(
             withVerificationID: recievedOTPText,
             verificationCode: otpText)
         
@@ -107,7 +109,7 @@ class LoginViewModel: ObservableObject {
                 return
             }
             // here: user logged in
-        }
+        }*/
         
     }
     

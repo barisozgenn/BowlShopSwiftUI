@@ -27,7 +27,7 @@ struct LoginView: View {
         .cornerRadius(29)
         .clipped()
         .scaleEffect(0.7)
-        .rotation3DEffect(.degrees(-45), axis:(x: 0, y: 1, z: 0))
+        .rotation3DEffect(.degrees(-15), axis:(x: 0, y: 1, z: 0))
     }
 }
 

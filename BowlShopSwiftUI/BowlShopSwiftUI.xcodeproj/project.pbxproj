@@ -93,6 +93,9 @@
 		AF792B1D29129F2800641BA6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B1C29129F2800641BA6 /* FirebaseDatabase */; };
 		AF792B1F29129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */; };
 		AF792B2029129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */; };
+		AF792B23291395F000641BA6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B22291395F000641BA6 /* FirebaseAuth */; };
+		AF792B25291395F000641BA6 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B24291395F000641BA6 /* FirebaseAuthCombine-Community */; };
+		AF792B27291395F000641BA6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B26291395F000641BA6 /* FirebaseDatabase */; };
 		AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */; };
 		AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89987E28E8A74D00FE3795 /* Assets.xcassets */; };
 		AF89988228E8A74D00FE3795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89988128E8A74D00FE3795 /* Preview Assets.xcassets */; };
@@ -216,6 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDAF61F291039D6008E0A37 /* Apollo in Frameworks */,
+				AF792B25291395F000641BA6 /* FirebaseAuthCombine-Community in Frameworks */,
+				AF792B27291395F000641BA6 /* FirebaseDatabase in Frameworks */,
+				AF792B23291395F000641BA6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,6 +761,9 @@
 			name = AdminSwiftUI_Mac;
 			packageProductDependencies = (
 				AFDAF61E291039D6008E0A37 /* Apollo */,
+				AF792B22291395F000641BA6 /* FirebaseAuth */,
+				AF792B24291395F000641BA6 /* FirebaseAuthCombine-Community */,
+				AF792B26291395F000641BA6 /* FirebaseDatabase */,
 			);
 			productName = AdminSwiftUI_Mac;
 			productReference = AF6AE8DF29091051001D1947 /* AdminSwiftUI_Mac.app */;
@@ -1272,8 +1281,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1303,8 +1311,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1438,6 +1445,21 @@
 			productName = "FirebaseAuthCombine-Community";
 		};
 		AF792B1C29129F2800641BA6 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		AF792B22291395F000641BA6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AF792B24291395F000641BA6 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		AF792B26291395F000641BA6 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF792B1729129F2800641BA6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;

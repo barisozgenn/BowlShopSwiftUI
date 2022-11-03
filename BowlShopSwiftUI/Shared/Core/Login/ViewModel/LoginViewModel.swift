@@ -93,22 +93,21 @@ class LoginViewModel: ObservableObject {
         }
         warningOtpText = ""
         
-        if otpText != recievedOTPText {
-            otpText = ""
-            warningOtpText = "⚠ Confirmation code doesn't match"
-            return
-        }
-        
         let credential = PhoneAuthProvider.provider().credential(
             withVerificationID: recievedOTPText,
             verificationCode: otpText)
         
+        print(credential.provider)
         Auth.auth().signIn(with: credential) { [weak self] (result, error) in
+            
             if let error = error {
-                self?.warningPhoneNumberText = error.localizedDescription
+                self?.warningOtpText = error.localizedDescription
                 return
             }
             // here: user logged in
+           
+            print(result?.user.uid)
+            print(result?.user.phoneNumber)
         }
         
     }

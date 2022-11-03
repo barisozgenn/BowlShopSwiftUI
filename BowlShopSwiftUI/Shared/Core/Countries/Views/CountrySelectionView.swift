@@ -8,14 +8,41 @@
 import SwiftUI
 
 struct CountrySelectionView: View {
+#if os(macOS)
+    @Environment(\.presentationMode) var presentationMode
+#endif
     @StateObject private var vm = CountrySelectionViewModel()
     @State private var selectedCountryCode: String?
     @Binding var selectedCountry : CountriesQuery.Data.Country
-    
+  
     var body: some View {
         VStack{
+#if os(macOS)
+            HStack{
+                Text("Choose your country code")
+                Spacer()
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Done")
+                }
+                .padding(.horizontal,14)
+                .padding(.vertical,4)
+                .buttonStyle(.borderless)
+                .background(.cyan)
+                .cornerRadius(4)
+                .foregroundColor(.white)
+                
+            }
+            .padding(.horizontal)
+            .padding()
+#endif
             SearchBarView(searchText: $vm.searchText)
+#if os(macOS)
+                .padding(.top, 0)
+#else
                 .padding(.top, 29)
+#endif
             Spacer()
                 .frame(height: 29)
             selectedCountryView

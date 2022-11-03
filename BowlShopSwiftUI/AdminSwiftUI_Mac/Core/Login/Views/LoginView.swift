@@ -8,7 +8,8 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var vm = LoginViewModel()
-
+    @State var countrySelectionViewVisiblity : Bool = false
+    
     private let gridItem = GridItem(.flexible(), spacing: 14)
     var body: some View {
         ZStack(alignment: .top){
@@ -75,7 +76,7 @@ extension LoginView {
                             }
                     }
                 }
-               
+                
             }
             .padding(.vertical)
             .padding(.bottom, 114)
@@ -101,6 +102,20 @@ extension LoginView {
                             Text(vm.selectedCountry.emoji)
                             Text("+\(vm.selectedCountry.phone)")
                         }
+                        .onTapGesture {
+                            countrySelectionViewVisiblity.toggle()
+                        }
+                        .sheet(isPresented: $countrySelectionViewVisiblity){
+                            CountrySelectionView(selectedCountry: $vm.selectedCountry)
+                                .accessibilityIdentifier("countrySelectionView")
+                                .presentationDetents([.height(500), .fraction(0.52), .fraction(0.7)])
+                                .presentationDragIndicator(.visible)
+                                .frame(minWidth: 429,
+                                       maxWidth: 529,
+                                       minHeight: 292,
+                                       maxHeight: 392)
+                        }
+                        
                         Text(vm.phoneNumberText)
                             .lineLimit(1)
                             .frame(maxWidth: 150, alignment: .leading)
@@ -220,7 +235,7 @@ extension LoginView {
                     }
                 }
                 .buttonStyle(.borderless)
-            .keyboardShortcut(getKeyboardShortcut(keyTag: keyTag))
+                .keyboardShortcut(getKeyboardShortcut(keyTag: keyTag))
                 .fontWeight(.bold)
                 .background(.white.opacity(keyTag.isEmpty ? 0.29 : 1))
                 .cornerRadius(7)
