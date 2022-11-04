@@ -96,6 +96,12 @@
 		AF792B23291395F000641BA6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B22291395F000641BA6 /* FirebaseAuth */; };
 		AF792B25291395F000641BA6 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B24291395F000641BA6 /* FirebaseAuthCombine-Community */; };
 		AF792B27291395F000641BA6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B26291395F000641BA6 /* FirebaseDatabase */; };
+		AF792B2C2914F50000641BA6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B2B2914F50000641BA6 /* ProfileView.swift */; };
+		AF792B2E2914F54C00641BA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B2D2914F54C00641BA6 /* ProfileViewModel.swift */; };
+		AF792B302914FBA500641BA6 /* TextFieldSingleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B2F2914FBA500641BA6 /* TextFieldSingleLineView.swift */; };
+		AF792B312914FBA500641BA6 /* TextFieldSingleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B2F2914FBA500641BA6 /* TextFieldSingleLineView.swift */; };
+		AF792B33291533CE00641BA6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B32291533CE00641BA6 /* ImagePicker.swift */; };
+		AF792B34291533CE00641BA6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF792B32291533CE00641BA6 /* ImagePicker.swift */; };
 		AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */; };
 		AF89987F28E8A74D00FE3795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89987E28E8A74D00FE3795 /* Assets.xcassets */; };
 		AF89988228E8A74D00FE3795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF89988128E8A74D00FE3795 /* Preview Assets.xcassets */; };
@@ -191,6 +197,10 @@
 		AF792B1429129A5400641BA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAppDelegate.swift; sourceTree = "<group>"; };
 		AF792B212912A1E100641BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF792B2B2914F50000641BA6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AF792B2D2914F54C00641BA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		AF792B2F2914FBA500641BA6 /* TextFieldSingleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSingleLineView.swift; sourceTree = "<group>"; };
+		AF792B32291533CE00641BA6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AF89987728E8A74C00FE3795 /* BowlShopSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlShopSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlShopSwiftUIApp.swift; sourceTree = "<group>"; };
 		AF89987E28E8A74D00FE3795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 				AF5327A12911317D006004F5 /* LocalFileManager.swift */,
 				AF53279B291130F3006004F5 /* LayzNavigationView.swift */,
 				AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */,
+				AF792B32291533CE00641BA6 /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -311,6 +322,7 @@
 				AF3E36BE28F53305000AE6A8 /* Components */,
 				AF532792291129D6006004F5 /* Countries */,
 				AF48CA09290BE4E400491ADE /* Login */,
+				AF792B282914F4B000641BA6 /* Profile */,
 				AF38E3B228FC0EFF0089795D /* Cart */,
 				AF3E36B928F4812D000AE6A8 /* ProductDetail */,
 			);
@@ -351,6 +363,7 @@
 				AF3E36C128F533E7000AE6A8 /* PositiveButtonModifier.swift */,
 				AF38E3B928FC15A00089795D /* SectionTitleModifier.swift */,
 				AF48CA11290DA00600491ADE /* SearchBarView.swift */,
+				AF792B2F2914FBA500641BA6 /* TextFieldSingleLineView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -641,6 +654,31 @@
 				AF89987A28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		AF792B282914F4B000641BA6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AF792B2A2914F4BF00641BA6 /* ViewModel */,
+				AF792B292914F4B900641BA6 /* Views */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AF792B292914F4B900641BA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF792B2B2914F50000641BA6 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF792B2A2914F4BF00641BA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF792B2D2914F54C00641BA6 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AF84B99428FDD64200851428 /* GraphQL */ = {
@@ -948,6 +986,7 @@
 				AF78DE5329119ACC0014B2AE /* CountryGraphQLService.swift in Sources */,
 				AF53CB1A2909A7D500623763 /* EditProductView.swift in Sources */,
 				AF6AE8E229091051001D1947 /* AdminSwiftUI_MacApp.swift in Sources */,
+				AF792B312914FBA500641BA6 /* TextFieldSingleLineView.swift in Sources */,
 				AF5327A029113115006004F5 /* ImageDownloadService.swift in Sources */,
 				AF6AE8F629091444001D1947 /* SideMenuView.swift in Sources */,
 				AF53CB30290A5B8F00623763 /* MockOnlineOrderService.swift in Sources */,
@@ -962,6 +1001,7 @@
 				AF53CB37290A746900623763 /* MockRestaurantOrderService.swift in Sources */,
 				AF53279D291130F3006004F5 /* LayzNavigationView.swift in Sources */,
 				AF6AE90729093F35001D1947 /* OnlineOrderModel.swift in Sources */,
+				AF792B34291533CE00641BA6 /* ImagePicker.swift in Sources */,
 				AF6AE8F9290915B4001D1947 /* SideBarMenu.swift in Sources */,
 				AF53CB1E290A51FF00623763 /* NetworkManager.swift in Sources */,
 				AF53CB23290A536C00623763 /* OnlineOrderService.swift in Sources */,
@@ -1012,6 +1052,7 @@
 				AF53CB2F290A5B8F00623763 /* MockOnlineOrderService.swift in Sources */,
 				AF3E36C428F534BA000AE6A8 /* View.swift in Sources */,
 				AF48CA12290DA00600491ADE /* SearchBarView.swift in Sources */,
+				AF792B302914FBA500641BA6 /* TextFieldSingleLineView.swift in Sources */,
 				AF38E3AF28FBFBF10089795D /* ProductMockDataService.swift in Sources */,
 				AF6AE8FB29091B61001D1947 /* ProductModel.swift in Sources */,
 				AF38E3B828FC0F3C0089795D /* CartView.swift in Sources */,
@@ -1020,11 +1061,14 @@
 				AF53CB25290A544C00623763 /* OnlineOrderServiceProtocol.swift in Sources */,
 				AF6AE90929093F4C001D1947 /* RestaurantOrderModel.swift in Sources */,
 				AF5327AC29113FB7006004F5 /* CountrySelectionCellView.swift in Sources */,
+				AF792B2C2914F50000641BA6 /* ProfileView.swift in Sources */,
+				AF792B2E2914F54C00641BA6 /* ProfileViewModel.swift in Sources */,
 				AF53279629112A16006004F5 /* CountrySelectionView.swift in Sources */,
 				AF3E36BD28F48158000AE6A8 /* ProductDetailViewOldStyle.swift in Sources */,
 				AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */,
 				AF53279C291130F3006004F5 /* LayzNavigationView.swift in Sources */,
 				AFBF9B9428FAAE61003A0E7F /* ProductDetailViewModel.swift in Sources */,
+				AF792B33291533CE00641BA6 /* ImagePicker.swift in Sources */,
 				AF53CB36290A746900623763 /* MockRestaurantOrderService.swift in Sources */,
 				AF6AE90229093987001D1947 /* DeliveryStatus.swift in Sources */,
 			);

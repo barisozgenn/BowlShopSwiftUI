@@ -28,7 +28,7 @@ struct BowlShopSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             //Text("Coming Soon!")
-            LoginView()
+            ProfileView()
         }
     }
 }
