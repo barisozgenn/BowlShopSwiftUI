@@ -97,7 +97,6 @@ class LoginViewModel: ObservableObject {
             withVerificationID: recievedOTPText,
             verificationCode: otpText)
         
-        print(credential.provider)
         Auth.auth().signIn(with: credential) { [weak self] (result, error) in
             
             if let error = error {
@@ -105,9 +104,9 @@ class LoginViewModel: ObservableObject {
                 return
             }
             // here: user logged in
-           
-            print(result?.user.uid)
-            print(result?.user.phoneNumber)
+            guard let user = result?.user else {return}
+            print(user.uid)
+            print("\(user.phoneNumber ?? "nil")")
         }
         
     }

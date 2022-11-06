@@ -9,9 +9,8 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject private var vm = ProfileViewModel()
     
-    @State private var selectedProfileImage: UIImage?
-    @State var profileImage: Image?
     @State var imagePickerPresented = false
+    @State private var presentLogoutAlert = false
     
     private let gridItem = GridItem(.flexible(), spacing: 14)
     var body: some View {
@@ -20,10 +19,12 @@ struct ProfileView: View {
                 .opacity(0.7)
                 .ignoresSafeArea()
             
-            // Photo View
             ScrollView{
                 photoView
                 inputsView
+            }
+            if !vm.email.isEmpty {
+                signOutButton
             }
         }
     }
@@ -40,7 +41,7 @@ extension ProfileView {
             Spacer()
             ZStack {
                 
-                if let profileImage = profileImage {
+                if let profileImage = vm.profileImage {
                     profileImage
                         .resizable()
                         .scaledToFill()
@@ -88,7 +89,7 @@ extension ProfileView {
                 imagePickerPresented.toggle()
             }
             .sheet(isPresented: $imagePickerPresented, onDismiss: loadImage) {
-                ImagePicker(image: $selectedProfileImage)
+                ImagePicker(image: $vm.selectedProfileImage)
             }
         }
         .padding()
@@ -105,16 +106,57 @@ extension ProfileView {
             }
             VStack{
                 TextFieldSingleLineView(bindText: $vm.name, placeHolderText: "name", imageSystemName: "person")
+                    .keyboardType(.namePhonePad)
                 TextFieldSingleLineView(bindText:  $vm.surname, placeHolderText: "surname", imageSystemName: "person.bust")
+                    .keyboardType(.namePhonePad)
                 TextFieldSingleLineView(bindText:  $vm.email, placeHolderText: "email", imageSystemName: "envelope")
+                    .keyboardType(.namePhonePad)
                 TextFieldSingleLineView(bindText:  $vm.phone, placeHolderText: "phone", imageSystemName: "phone")
                     .disabled(true)
+                
+                Spacer()
+                    .frame(minHeight: 29)
+                
+                Button(action: {
+                    vm.saveUserProfile()
+                }) {
+                    Text("Save")
+                        .font(.headline)
+                }
+                .frame(width: 229)
+                .foregroundColor(Color(.white))
+                .padding()
+                .background(.green)
+                .cornerRadius(4)
+                
             }
             .padding(.vertical)
             .background(.white.opacity(0.29))
         }
         .padding(.top)
     }
+    
+    private var signOutButton : some View {
+        VStack{
+            Button {
+                presentLogoutAlert.toggle()
+            } label: {
+                Text("Sign Out")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.gray)
+            }
+            .padding()
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .alert("Sign Out?", isPresented: $presentLogoutAlert, actions: {
+            Button("Sign Out", role: .destructive, action: {
+                vm.signOut()
+            })
+        }, message: {
+            Text("You will be logged out of your account.")
+        })
+    }
+
     
     struct Wave: Shape {
         
@@ -140,8 +182,8 @@ extension ProfileView {
     }
     
     func loadImage(){
-        guard let selectedProfileImage = selectedProfileImage else{return}
-        profileImage = Image(uiImage: selectedProfileImage)
+        guard let selectedProfileImage = vm.selectedProfileImage else{return}
+        vm.profileImage = Image(uiImage: selectedProfileImage)
     }
 }
 struct ProfileView_Previews: PreviewProvider {

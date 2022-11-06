@@ -109,6 +109,9 @@ class LoginViewModel: ObservableObject {
                 return
             }
             // here: user logged in
+        guard let user = result?.user else {return}
+        print(user.uid)
+        print("\(user.phoneNumber ?? "nil")")
         }*/
         
     }
