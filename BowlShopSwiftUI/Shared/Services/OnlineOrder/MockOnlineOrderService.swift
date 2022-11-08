@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 import Combine
 
 class MockOnlineOrderService: OnlineOrderServiceProtocol {
@@ -40,7 +41,7 @@ class MockOnlineOrderService: OnlineOrderServiceProtocol {
     }
     
     private func mockUser() -> UserModel {
-        return UserModel(id: UUID().uuidString, name: "name", surname: "surname", phone: "123456789", email: "test@test.com", addresses: [mockAddress()], registerDate: Date())
+        return UserModel(id: UUID().uuidString, name: "name", surname: "surname", phone: "123456789", email: "test@test.com", profileImageUrl: "", addresses: [mockAddress()], registerDate: Timestamp())
     }
     
     private func mockAddress() -> UserAddressModel {

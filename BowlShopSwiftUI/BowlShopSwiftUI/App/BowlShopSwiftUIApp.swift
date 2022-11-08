@@ -11,7 +11,7 @@ import SwiftUI
 struct BowlShopSwiftUIApp: App {
     
     // register app delegate for Firebase setup
-     @UIApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
     
     let userLogin: Bool
     
@@ -23,20 +23,15 @@ struct BowlShopSwiftUIApp: App {
         print("DEBUG: user has address: \(userHasAddress)")
         print("DEBUG: user has payment method: \(userHasPaymentMethod)")
         
+        
+        
     }
     
     var body: some Scene {
         WindowGroup {
-            if let user = AuthManager.shared.userSession {
-                
-                if user.email == nil {
-                    ProfileView()
-                }else {
-                    ProductDetailView()
-                }
-               
-            }
-            else {
+            if let _ = AuthManager.shared.userSession {
+                ProductDetailView()
+            } else {
                 LoginView()
             }
         }

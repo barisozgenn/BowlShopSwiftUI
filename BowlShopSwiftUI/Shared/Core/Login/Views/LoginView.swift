@@ -12,31 +12,61 @@ struct LoginView: View {
     @State var countrySelectionViewVisiblity : Bool = false
     
     private let gridItem = GridItem(.flexible(), spacing: 14)
+
+    @State private var animTrans: Bool = false
+    @State private var isUserProfileSaved: Bool = false
+    
     var body: some View {
         
-        // Login Views
-        VStack{
-            headerView
-            ZStack{
-                phoneNumberView
-                otpView
+        ZStack{
+            LinearGradient(colors: [.green, .cyan], startPoint: .bottom, endPoint: .top)
+                .opacity(0.7)
+                .ignoresSafeArea()
+
+            // Login Views
+            VStack{
+                headerView
+                ZStack{
+                    phoneNumberView
+                    otpView
+                }
+                
+                keyboardView
+            }
+            .cornerRadius(animTrans ? 29 : 0)
+            .clipped()
+            .scaleEffect(animTrans ? 0.29 : 1)
+            .rotation3DEffect(.degrees(animTrans ? -90 : 0), axis:(x: 0, y: 1, z: 0))
+            .offset(x: animTrans ? -230 : 0)
+            .onReceive(vm.$userSession) { user in
+                if user != nil {
+                    withAnimation(.easeInOut(duration: 1.4)){
+                        animTrans.toggle()
+                    }
+                }
             }
             
-            keyboardView
+            if vm.userSession != nil {
+                ProfileView(isUserProfileSaved: $isUserProfileSaved, gradientBackgroundVisibility: false)
+                    .cornerRadius(!animTrans ? 29 : 0)
+                    .clipped()
+                    .scaleEffect(!animTrans ? 0.29 : 1)
+                    .rotation3DEffect(.degrees(!animTrans ? 90 : 0), axis:(x: 0, y: 1, z: 0))
+                    .offset(x: !animTrans ? 230 : 0)
+               
+            }
+            
         }
-        .cornerRadius(29)
-        .clipped()
-        .scaleEffect(0.7)
-        .rotation3DEffect(.degrees(0/*-15*/), axis:(x: 0, y: 1, z: 0))
+        .edgesIgnoringSafeArea(.bottom)
+           
+      
     }
 }
 
 extension LoginView {
     private var headerView: some View {
         ZStack(alignment: .top){
-            LinearGradient(colors: [.green, .cyan], startPoint: .bottom, endPoint: .top)
-                .opacity(0.7)
-                .ignoresSafeArea()
+            
             VStack{
                 Text((vm.loginStep == .phone ? "Continue with your phone" : "Verify your phone to login").capitalized)
                     .font(.title2)
@@ -68,7 +98,7 @@ extension LoginView {
             .padding(.vertical)
             .padding(.bottom, 114)
         }
-        .foregroundColor(.white)
+        .foregroundColor(Color(.white))
         .padding(.bottom, -107)
     }
     private var phoneNumberView: some View {
@@ -221,6 +251,7 @@ extension LoginView {
         }
                     .foregroundColor(Color(.darkText))
                     .padding(14)
+                    .padding(.bottom)
                     .background(Color(.systemGroupedBackground))
     }
     

@@ -7,17 +7,25 @@
 
 import SwiftUI
 struct ProfileView: View {
-    @StateObject private var vm = ProfileViewModel()
-    
+    @StateObject var vm = ProfileViewModel()
+         
     @State var imagePickerPresented = false
     @State private var presentLogoutAlert = false
     
+    @Binding var isUserProfileSaved: Bool
+    
     private let gridItem = GridItem(.flexible(), spacing: 14)
+    var gradientBackgroundVisibility = true
+
     var body: some View {
         ZStack(alignment: .top){
-            LinearGradient(colors: [.green, .cyan], startPoint: .bottom, endPoint: .top)
-                .opacity(0.7)
-                .ignoresSafeArea()
+            
+            if gradientBackgroundVisibility {
+                LinearGradient(colors: [.green, .cyan], startPoint: .bottom, endPoint: .top)
+                    .opacity(0.7)
+                    .ignoresSafeArea()
+                
+            }
             
             ScrollView{
                 photoView
@@ -118,7 +126,7 @@ extension ProfileView {
                     .frame(minHeight: 29)
                 
                 Button(action: {
-                    vm.saveUserProfile()
+                    vm.saveUserProfile(email: vm.email, name: vm.name, surname: vm.surname)
                 }) {
                     Text("Save")
                         .font(.headline)
@@ -128,6 +136,13 @@ extension ProfileView {
                 .padding()
                 .background(.green)
                 .cornerRadius(4)
+                
+                .onReceive(vm.$isUserProfileSaved) { isSaved in
+                    guard let isSaved = isSaved else {return}
+                    withAnimation(.spring()){
+                        isUserProfileSaved = isSaved
+                    }
+                }
                 
             }
             .padding(.vertical)
@@ -156,7 +171,7 @@ extension ProfileView {
             Text("You will be logged out of your account.")
         })
     }
-
+    
     
     struct Wave: Shape {
         
@@ -188,6 +203,6 @@ extension ProfileView {
 }
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(isUserProfileSaved: .constant(false))
     }
 }

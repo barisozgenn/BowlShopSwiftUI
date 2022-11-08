@@ -9,14 +9,14 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-struct ImageUploader {
+struct ImageUploadService {
     
     #if os(macOS)
     static func uploadImage(image: NSImage, completion: @escaping(String, String) -> Void){
         
     }
     #else
-    static func uploadImage(image: UIImage, imageUploadedType: ImageUploadedType, completion: @escaping(String, String) -> Void){
+    static func uploadImage(image: UIImage, imageUploadedType: FirebaseFileType, completion: @escaping(String, String) -> Void){
         guard let imageData = image.jpegData(compressionQuality: imageUploadedType.compressValue) else {return}
         
         let fileName = "p_\(NSUUID().uuidString)"
@@ -36,25 +36,4 @@ struct ImageUploader {
     }
     #endif
     
-    enum ImageUploadedType: String, CaseIterable, Identifiable {
-        case profile
-        case product
-        
-        var id : String { return rawValue}
-        
-        var compressValue: Double {
-            switch self {
-            case .profile: return 0.7
-            case .product: return 0.14
-            }
-        }
-        
-        var folderName: String
-        {
-           switch self {
-           case .profile: return "/user/profile_images/"
-           case .product: return "/product/product_images/"
-           }
-       }
-    }
 }

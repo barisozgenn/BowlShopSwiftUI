@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>336819874250-s36rlg9bhevc9sq98v6o54erihpijbpj.apps.googleusercontent.com</string>
+	<string>336819874250-k8j56qd0uppunueril17as09i54ljl6j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.336819874250-s36rlg9bhevc9sq98v6o54erihpijbpj</string>
+	<string>com.googleusercontent.apps.336819874250-k8j56qd0uppunueril17as09i54ljl6j</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCuI7HjtzPOULUeIipR0TPf0CwdGp4JQPA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>barisozgen.BowlShopsSiftUI</string>
+	<string>barisozgen.BowlShopSwiftUI</string>
 	<key>PROJECT_ID</key>
 	<string>bowlshopswiftui</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:336819874250:ios:940b7657c7891224064733</string>
+	<string>1:336819874250:ios:84be2f4229700bd5064733</string>
 </dict>
 </plist>

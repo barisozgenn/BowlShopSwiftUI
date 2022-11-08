@@ -100,6 +100,6 @@ class ImageDownloadService {
     enum EImageCategory : String {
         case countryFlag = "country_flag_images"
         case productImage = "product_images"
-        case profileImage = "profile_images"
+        case profileImage = "/user/profile_images"
     }
 }

@@ -1,51 +1,61 @@
 {
   "images" : [
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-32.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-256.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-512.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

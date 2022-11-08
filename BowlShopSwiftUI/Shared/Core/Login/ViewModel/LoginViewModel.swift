@@ -8,6 +8,10 @@
 import Firebase
 
 class LoginViewModel: ObservableObject {
+    private let authManager = AuthManager.shared
+
+    @Published var userSession: Firebase.User?
+
     @Published var loginStep : ELoginStep = .phone
     @Published var padNumbers = ["1","2","3","4","5","6","7","8","9","","0","delete.left"]
     @Published var phoneCountryCodeText: String = "49"
@@ -20,6 +24,10 @@ class LoginViewModel: ObservableObject {
     @Published var selectedCountry = CountriesQuery.Data.Country(code: "DE", name: "Germany", emoji: "🇩🇪", phone: "49")
     
     private var recievedOTPText: String = ""
+    
+    init(){
+        self.userSession = authManager.userSession
+    }
     
     //MARK: Phone Number Section
     func setPhoneNumberText(keyTag: String){
@@ -107,6 +115,7 @@ class LoginViewModel: ObservableObject {
             guard let user = result?.user else {return}
             print(user.uid)
             print("\(user.phoneNumber ?? "nil")")
+            self?.userSession = user
         }
         
     }

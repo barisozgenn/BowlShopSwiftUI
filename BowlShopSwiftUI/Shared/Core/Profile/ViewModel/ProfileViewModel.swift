@@ -4,33 +4,31 @@
 //
 //  Created by Baris OZGEN on 4.11.2022.
 //
-
 import Firebase
+import FirebaseFirestore
+
 import SwiftUI
+import FirebaseStorage
 
 class ProfileViewModel: ObservableObject {
+    private let authManager = AuthManager.shared
+    
     @Published var userSession: Firebase.User?
+    @Published var userProfile: UserModel?
     
     @Published var email: String = ""
     @Published var phone: String = ""
     @Published var name: String = ""
     @Published var surname: String = ""
-    
     @Published var selectedProfileImage: UIImage?
     @Published var profileImage: Image?
     
-    private let authManager = AuthManager.shared
+    @Published var isUserProfileSaved: Bool?
     
     init(){
         self.userSession = authManager.userSession
-        getUserProfile()
-    }
-    
-    func getUserProfile(){
-        if let email = userSession?.email { self.email = email}
-        if let phone = userSession?.phoneNumber { self.phone = phone}
-        if let name = userSession?.displayName { self.name = name}
-        if let surname = userSession?.displayName { self.email = surname}
+        self.isUserProfileSaved = false
+        fetchUserData()
     }
     
     func signOut(){
@@ -38,7 +36,40 @@ class ProfileViewModel: ObservableObject {
         authManager.signOut()
     }
     
-    func saveUserProfile(){
+    func fetchUserData(){
+        
+        if let phoneNumber = userSession?.phoneNumber {
+            phone = phoneNumber
+        }
+        
+        /*authManager.fetchUserProfile(){[weak self] userProfile in
+         self?.userProfile = userProfile
+         
+         if let userModel = self?.userProfile {
+         self?.email = userModel.email
+         self?.name = userModel.name
+         self?.surname = userModel.surname
+         }
+         }*/
+        guard let uid = userSession?.uid else {return}
+        COLLECTION_USER_PROFILE.document(uid).getDocument {[weak self] snapshot, _ in
+            guard let userModel = try? snapshot?.data(as: UserModel.self) else {return}
+            self?.email = userModel.email
+            self?.name = userModel.name
+            self?.surname = userModel.surname
+            
+            let ref = Storage.storage().reference(withPath: "\(FirebaseFileType.profile.folderName)\(userModel.profileImageUrl)")
+            
+            ref.getData(maxSize: 1 * 1024 * 1024) { data, _ in
+                
+                guard let data = data,
+                      let uiImage = UIImage(data: data) else {return}
+                
+                self?.profileImage = Image(uiImage: uiImage)
+            }
+        }
+    }
+    func saveUserProfile(email:String, name: String, surname: String){
         
         guard let user = userSession else {return}
         
@@ -48,14 +79,16 @@ class ProfileViewModel: ObservableObject {
             return
         }
         
-        
         var profileImageUrl = ""
         
         if let selectedProfileImage = selectedProfileImage {
-            ImageUploader.uploadImage(image: selectedProfileImage, imageUploadedType: .profile) { [weak self] (urlString, fileName) in
+            ImageUploadService.uploadImage(image: selectedProfileImage, imageUploadedType: .profile) { [weak self] (urlString, fileName) in
                 
                 profileImageUrl = fileName
-                self?.saveUserData(user: user, profileImageUrl: profileImageUrl)
+                
+                let userModel = UserModel(name: name, surname: surname, phone: self?.userSession?.phoneNumber ?? "", email: email, profileImageUrl: profileImageUrl, addresses: nil, registerDate: Timestamp())
+                
+                self?.saveUserData(user: user, userModel: userModel)
                 
                 if let uiImage = ImageDownloadService(imageCategory: .profileImage, imageName: urlString).image {
                     self?.profileImage = Image(uiImage: uiImage)
@@ -64,26 +97,29 @@ class ProfileViewModel: ObservableObject {
             }
         }
         else {
-            saveUserData(user: user)
+            let userModel = UserModel(name: name, surname: surname, phone: userSession?.phoneNumber ?? "", email: email, profileImageUrl: profileImageUrl, addresses: nil, registerDate: Timestamp())
+            
+            saveUserData(user: user, userModel: userModel)
         }
-        
-        
-        
-        
     }
     
-    private func saveUserData(user: Firebase.User, profileImageUrl: String = ""){
-        let data = [
-            "uid": user.uid,
-            "email": email,
-            "phone": user.phoneNumber,
-            "name": name,
-            "surname": surname,
-            "profileImageUrl": profileImageUrl
-        ]
+    private func saveUserData(user: Firebase.User, userModel: UserModel){
+        /*let data = [
+         "email": email,
+         "phone": user.phoneNumber,
+         "name": name,
+         "surname": surname,
+         "profileImageUrl": profileImageUrl
+         ]*/
         
-        Firestore.firestore().collection("users").document(user.uid).setData(data as [String : Any]){ [weak self] _ in
+        try? COLLECTION_USER_PROFILE.document(user.uid).setData(from: userModel, merge: true){ [weak self] error in
+            if let error = error {
+                print("DEBUG: Error writing document: \(error.localizedDescription)")
+                return
+            }
             self?.userSession = user
+            self?.userProfile = userModel
+            self?.isUserProfileSaved = true
         }
     }
     
