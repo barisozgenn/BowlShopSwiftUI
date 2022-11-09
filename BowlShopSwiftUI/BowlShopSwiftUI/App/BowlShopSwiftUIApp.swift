@@ -23,17 +23,11 @@ struct BowlShopSwiftUIApp: App {
         print("DEBUG: user has address: \(userHasAddress)")
         print("DEBUG: user has payment method: \(userHasPaymentMethod)")
         
-        
-        
     }
     
     var body: some Scene {
         WindowGroup {
-            if let _ = AuthManager.shared.userSession {
-                ProductDetailView()
-            } else {
-                LoginView()
-            }
+           RootView()
         }
     }
 }

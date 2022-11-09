@@ -96,6 +96,8 @@
 		AF6D247F291A99A300378032 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6D247D291A99A300378032 /* RootView.swift */; };
 		AF6D2482291A9F3700378032 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6D2481291A9F3700378032 /* RootViewModel.swift */; };
 		AF6D2483291A9F3700378032 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6D2481291A9F3700378032 /* RootViewModel.swift */; };
+		AF6D2485291BC31100378032 /* TextEditorMultiLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6D2484291BC31100378032 /* TextEditorMultiLineView.swift */; };
+		AF6D2486291BC31100378032 /* TextEditorMultiLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6D2484291BC31100378032 /* TextEditorMultiLineView.swift */; };
 		AF78DE5229119ACC0014B2AE /* CountryGraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */; };
 		AF78DE5329119ACC0014B2AE /* CountryGraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */; };
 		AF792B1929129F2800641BA6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF792B1829129F2800641BA6 /* FirebaseAuth */; };
@@ -220,6 +222,7 @@
 		AF6AE90F29094305001D1947 /* UserAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressModel.swift; sourceTree = "<group>"; };
 		AF6D247D291A99A300378032 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		AF6D2481291A9F3700378032 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		AF6D2484291BC31100378032 /* TextEditorMultiLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorMultiLineView.swift; sourceTree = "<group>"; };
 		AF78DE5129119ACC0014B2AE /* CountryGraphQLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGraphQLService.swift; sourceTree = "<group>"; };
 		AF792B1E29129FDB00641BA6 /* FirebaseAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAppDelegate.swift; sourceTree = "<group>"; };
 		AF792B212912A1E100641BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -357,8 +360,8 @@
 		AF3E36B828F48122000AE6A8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AF6D247B291A998400378032 /* Root */,
 				AF3E36BE28F53305000AE6A8 /* Components */,
+				AF6D247B291A998400378032 /* Root */,
 				AF532792291129D6006004F5 /* Countries */,
 				AF48CA09290BE4E400491ADE /* Login */,
 				AF792B282914F4B000641BA6 /* Profile */,
@@ -403,6 +406,7 @@
 				AF38E3B928FC15A00089795D /* SectionTitleModifier.swift */,
 				AF48CA11290DA00600491ADE /* SearchBarView.swift */,
 				AF792B2F2914FBA500641BA6 /* TextFieldSingleLineView.swift */,
+				AF6D2484291BC31100378032 /* TextEditorMultiLineView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1110,6 +1114,7 @@
 				AF5327AA291134F6006004F5 /* DownloadedImageViewModel.swift in Sources */,
 				AF792B2029129FDB00641BA6 /* FirebaseAppDelegate.swift in Sources */,
 				AF6AE91129094305001D1947 /* UserAddressModel.swift in Sources */,
+				AF6D2486291BC31100378032 /* TextEditorMultiLineView.swift in Sources */,
 				AF6AE90329093987001D1947 /* DeliveryStatus.swift in Sources */,
 				AF53CB26290A544C00623763 /* OnlineOrderServiceProtocol.swift in Sources */,
 				AF6AE90E290942F4001D1947 /* UserModel.swift in Sources */,
@@ -1172,6 +1177,7 @@
 				AF3E36BD28F48158000AE6A8 /* ProductDetailViewOldStyle.swift in Sources */,
 				AF89987B28E8A74C00FE3795 /* BowlShopSwiftUIApp.swift in Sources */,
 				AF53279C291130F3006004F5 /* LayzNavigationView.swift in Sources */,
+				AF6D2485291BC31100378032 /* TextEditorMultiLineView.swift in Sources */,
 				AFBF9B9428FAAE61003A0E7F /* ProductDetailViewModel.swift in Sources */,
 				AF792B33291533CE00641BA6 /* ImagePicker.swift in Sources */,
 				AFF20E792917CDD60005DFC2 /* String.swift in Sources */,

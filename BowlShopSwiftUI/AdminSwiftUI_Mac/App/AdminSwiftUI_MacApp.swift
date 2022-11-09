@@ -10,17 +10,11 @@ import SwiftUI
 @main
 struct AdminSwiftUI_MacApp: App {
     // register app delegate for Firebase setup
-     @NSApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
-    private let authManager = AuthManager.shared
+    // @NSApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
 
     var body: some Scene {
         WindowGroup {
-            if authManager.userSession == nil {
-                LoginView()
-            }
-            else {
-                EditProductView()
-            }
+            RootView()
         }
     }
 }

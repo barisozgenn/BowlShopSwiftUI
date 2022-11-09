@@ -14,6 +14,9 @@ class AuthManager {
     static let shared = AuthManager()
     
     init() {
+        #if os(macOS)
+        FirebaseApp.configure()
+        #endif
         userSession = Auth.auth().currentUser
     }
     

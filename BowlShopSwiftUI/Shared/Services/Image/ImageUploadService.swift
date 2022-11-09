@@ -4,8 +4,11 @@
 //
 //  Created by Baris OZGEN on 6.11.2022.
 //
-
+#if os(macOS)
+import AppKit
+#else
 import UIKit
+#endif
 import Firebase
 import FirebaseStorage
 

@@ -8,13 +8,7 @@
 import SwiftUI
 import Firebase
 
-#if os(macOS)
-class FirebaseAppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ notification: Notification) {
-            FirebaseApp.configure()
-        }
-}
-#elseif os(iOS)
+#if os(iOS)
 class FirebaseAppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

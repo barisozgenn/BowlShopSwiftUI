@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+#if os(macOS)
+
+#else
 struct ImagePicker: UIViewControllerRepresentable {
    
     @Binding var image: UIImage?
@@ -14,7 +17,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> some UIViewController {
         let picker = UIImagePickerController()
-        picker.delegate = context.coordinator 
+        picker.delegate = context.coordinator
         return picker
     }
     
@@ -41,3 +44,5 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
     }
 }
+
+#endif

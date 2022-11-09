@@ -14,11 +14,15 @@ struct RootView: View {
     var body: some View {
         
         ZStack{
-           
+            
             if animIsOver {
                 if let _ = vm.userSession
                 {
+#if os(macOS)
+                    HomeView()
+#else
                     ProductDetailView()
+#endif
                 }
                 else {
                     LoginView()
@@ -43,31 +47,46 @@ extension RootView {
     
     private var launchView: some View {
         ZStack{
-            VStack{
-              
-                Spacer()
-                    .frame(maxHeight: .infinity)
                 GeometryReader { geo in
                     
-                    Wave(waveHeight: 14 , phase: Angle(degrees: Double(geo.frame(in: .global).minY) * 0.7))
-                        .foregroundColor(.cyan.opacity(0.14))
-                        .frame( height: 500)
-                }
-            }
-            
-            Image("bowloshop-logo-baris")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 128)
-                .rotationEffect(Angle(degrees: animRotate))
-                .onAppear{
-                    withAnimation(.easeOut(duration: 1.29).repeatForever()){
-                        animRotate = 29
+                    VStack{
+                        Spacer()
+                        Wave(waveHeight: 14 , phase: Angle(degrees: Double(geo.frame(in: .global).minY) * 0.7))
+                            .foregroundColor(.black.opacity(0.14))
+                            .frame( height: 170)
                     }
+                  
                 }
+            
+            
+            VStack{
+                Spacer()
+                Image("bowloshop-logo-white-baris")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 128)
+                    .rotationEffect(Angle(degrees: animRotate))
+                    .onAppear{
+                        withAnimation(.easeOut(duration: 1.29).repeatForever()){
+                            animRotate = 29
+                        }
+                    }
+                Spacer()
+                Text("BowlShop")
+                    .font(.system(size: 58))
+                Text("SwiftUI Multi Platform")
+                    .font(.title2)
+            }
+            .padding(.vertical, 29)
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+            
             
         }
-        .background(.white)
+        .background(content: {
+            LinearGradient(colors: [.cyan, .green], startPoint: .top, endPoint: .bottom)
+                .opacity(0.7)
+        })
         .scaleEffect(animIsOver ? 4 : 1)
         .opacity(animIsOver ? 0 : 1)
         .ignoresSafeArea()

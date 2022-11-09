@@ -18,7 +18,7 @@ struct LoginView: View {
                     .opacity(0.7)
                     .ignoresSafeArea()
                     .frame(minWidth: 1024)
-                    .frame(height: 429)
+                    .frame(height: 459)
                     .padding(.bottom, -10)
                 
                 Color(.lightGray)
@@ -35,7 +35,7 @@ struct LoginView: View {
             }
             .clipped()
             .background(.white)
-            .frame(width: 430, height: 500)
+            .frame(width: 430, height: 529)
         }
         
     }
@@ -59,7 +59,7 @@ extension LoginView {
                     .frame(height: 128)
                 Spacer()
                 HStack(spacing:0){
-                    Text(vm.loginStep == .phone ? "You can login or register with the SMS verification code." : "+\(vm.phoneCountryCodeText) \(vm.phoneNumberText)")
+                    Text(vm.loginStep == .phone ? "You can login with your company account." : "+\(vm.phoneCountryCodeText) \(vm.phoneNumberText)")
                         .lineLimit(2)
                         .font(vm.loginStep == .phone ?  .title3 : .title2)
                         .fontWeight(.semibold)
@@ -164,7 +164,24 @@ extension LoginView {
             }
             HStack(alignment: .bottom){
                 VStack(alignment: .leading){
-                    Text(vm.warningOtpText.isEmpty ? "Type sms confirmation code" : vm.warningOtpText)
+                    Text(vm.warningOtpText.isEmpty ? "Type your email address" : vm.warningEmailText)
+                        .font(.subheadline)
+                        .padding(.vertical,4)
+                        .foregroundColor(vm.warningEmailText.isEmpty ? .gray : .orange)
+                    HStack{
+                        Image(systemName: "envelope")
+                        Text(vm.emailText)
+                            .lineLimit(1)
+                            .font(.headline)
+                            .frame(maxWidth: 240, alignment: .leading)
+                        
+                    }
+                    
+                    Divider()
+                        .background(.primary)
+                        .padding(.top, 0)
+                        .padding(.trailing, 7)
+                    Text(vm.warningOtpText.isEmpty ? "Type your OTP" : vm.warningOtpText)
                         .font(.subheadline)
                         .padding(.vertical,4)
                         .foregroundColor(vm.warningOtpText.isEmpty ? .gray : .orange)
@@ -205,7 +222,7 @@ extension LoginView {
             .padding()
             .padding(.top, 14)
         }
-        .frame(height: 100)
+        .frame(height: 150)
         .offset(x: vm.loginStep == .otp ? 0 : 430)
     }
     

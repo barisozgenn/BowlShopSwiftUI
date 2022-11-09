@@ -13,15 +13,31 @@ class RootViewModel: ObservableObject {
     @Published var userSession: Firebase.User?
     @Published var animIsOver = false
     @Published var viewIsLoaded = false
-
-    init(){
-        Task{
-            self.userSession = authManager.userSession
-            try await Task.sleep(nanoseconds: UInt64(5.14 * Double(NSEC_PER_SEC)))
-            self.animIsOver = true
-            try await Task.sleep(nanoseconds: UInt64(0.7 * Double(NSEC_PER_SEC)))
-            self.viewIsLoaded = true
-        }
+    
+    init() {
+        setupApp()
     }
     
+    func setupApp() {
+#if os(macOS)
+        Task{
+            userSession = authManager.userSession
+            try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
+            animIsOver = true
+            try await Task.sleep(until: .now + .seconds(0.7), clock: .continuous)
+            viewIsLoaded = true
+            
+        }
+        
+        
+#else
+        Task {
+            userSession = authManager.userSession
+            try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
+            animIsOver = true
+            try await Task.sleep(until: .now + .seconds(0.7), clock: .continuous)
+            viewIsLoaded = true
+        }
+#endif
+    }
 }

@@ -8,19 +8,23 @@
 import Firebase
 
 class LoginViewModel: ObservableObject {
+    @Published var userSession: Firebase.User?
+
     @Published var loginStep : ELoginStep = .phone
     @Published var padNumbers = ["1","2","3","4","5","6","7","8","9","0","delete.left"]
     @Published var phoneCountryCodeText: String = "49"
     @Published var phoneNumberText: String = ""
     @Published var otpText: String = ""
+    @Published var emailText: String = "baris@admin.bowlShopSwiftUI.com"
     
     @Published var warningPhoneNumberText: String = ""
     @Published var warningOtpText: String = ""
+    @Published var warningEmailText: String = ""
     
     @Published var selectedCountry = CountriesQuery.Data.Country(code: "DE", name: "Germany", emoji: "🇩🇪", phone: "49")
-    
+   
     private var recievedOTPText: String = ""
-    
+
     //MARK: Phone Number Section
     func setPhoneNumberText(keyTag: String){
         
@@ -53,17 +57,8 @@ class LoginViewModel: ObservableObject {
         // For testing we define it true, when the real message is required we need to make it false
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         
-        let phoneNumber = "+\(selectedCountry.phone)\(phoneNumberText)"
+        //let phoneNumber = "+\(selectedCountry.phone)\(phoneNumberText)"
         
-       /* PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil){ [weak self] (verificationCode, error) in
-        if let error = error {
-            self?.warningOtpText = error.localizedDescription
-            return
-        }
-            
-            guard let recievedOTPText = verificationCode else {return}
-            self?.recievedOTPText = recievedOTPText
-        }*/
     }
     
     // MARK: OTP Section
@@ -93,27 +88,15 @@ class LoginViewModel: ObservableObject {
         }
         warningOtpText = ""
         
-        if otpText != recievedOTPText {
-            otpText = ""
-            warningOtpText = "⚠ Confirmation code doesn't match"
-            return
-        }
-        
-       /* let credential = PhoneAuthProvider.provider().credential(
-            withVerificationID: recievedOTPText,
-            verificationCode: otpText)
-        
-        Auth.auth().signIn(with: credential) { [weak self] (result, error) in
-            if let error = error {
-                self?.warningPhoneNumberText = error.localizedDescription
-                return
-            }
-            // here: user logged in
-        guard let user = result?.user else {return}
-        print(user.uid)
-        print("\(user.phoneNumber ?? "nil")")
-        }*/
-        
+        Auth.auth().signIn(withEmail: emailText, password: otpText){ [weak self] (result, error) in
+         if let error = error {
+             self?.warningOtpText = error.localizedDescription
+             return
+         }
+             
+            guard let user = result?.user else {return}
+            self?.userSession = user
+         }
     }
     
     enum ELoginStep : Int {
