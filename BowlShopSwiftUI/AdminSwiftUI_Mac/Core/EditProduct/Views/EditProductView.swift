@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import CoreVideo
 
 struct EditProductView: View {
+    @StateObject private var vm = EditProductViewModel()
+    
     @State private var titleText = ""
     @State private var descriptionText = ""
 
@@ -21,22 +24,24 @@ struct EditProductView: View {
     
     @State private var priceText = ""
     
-    @State private var isPresented = true
-    
+    @State var imagePickerPresented = false
+
+    @State private var selectedProductImages: [NSImage] = []
+
     var body: some View {
         ScrollView{
             VStack{
-                
                 titleAndDescriptionView
              
                 ingredientView
                 
                 contentDetailView
                 
+                imagesView
                 
                 Button(action: {
                     withAnimation(.spring()){
-                      
+                        vm.addProduct(product: ProductModel(name: titleText, price: priceText.toDouble(), detail: descriptionText,category: FoodCategory.food,ingredients: [FoodIngredient.egg, .seafood], portion: portionText.toDouble(), fat: fatText.toDouble(), protein: proteinText.toDouble(), carbohydrate: carbohydrateText.toDouble(), sugar: sugarText.toDouble(), preparationMinute: preparationMinuteText.toDouble(), images: [""], videos: [""], adminId: vm.userSession?.uid ?? "", createdDate: Date().toTimestamp()))
                     }
                 })
                 {
@@ -129,6 +134,51 @@ extension EditProductView {
         }
         .padding()
     }
+    
+    private var imagesView: some View {
+        VStack(alignment: .leading){
+            Divider()
+            Text("Photos")
+                .foregroundColor(.gray)
+            HStack{
+                ForEach(vm.defaultImageURLs, id: \.self){ image in
+                    HStack{
+                        VStack{
+                            
+                            if image == vm.defaultImageURL {
+                                Image(systemName: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(Color(.lightGray))
+                            }else {
+                                let imageUrlPath = image
+                                if FileManager.default.fileExists(atPath: imageUrlPath) {
+                                    let url = NSURL(string: imageUrlPath)
+                                    let data = NSData(contentsOf: url! as URL)
+                                    let img = NSImage(data: data! as Data)
+                                    
+                                    Image(nsImage: img!)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(Color(.lightGray))
+                                }
+                                
+                            }
+                        }
+                      
+                    }
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(14)
+                    .padding()
+                    .background(Color(.white).opacity(0.58))
+                    .padding()
+                }
+            }
+        }
+        .padding()
+    }
+    
+    
     func analysisText(text: String) -> AttributedString {
         
         var attributedString = AttributedString(text)
@@ -143,6 +193,7 @@ extension EditProductView {
         
         return attributedString
     }
+    
 }
 struct EditProductView_Previews: PreviewProvider {
     static var previews: some View {

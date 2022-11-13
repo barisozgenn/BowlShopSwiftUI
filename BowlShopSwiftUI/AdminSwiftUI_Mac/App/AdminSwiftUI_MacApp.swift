@@ -14,7 +14,8 @@ struct AdminSwiftUI_MacApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            HomeView()
+            //RootView()
         }
     }
 }

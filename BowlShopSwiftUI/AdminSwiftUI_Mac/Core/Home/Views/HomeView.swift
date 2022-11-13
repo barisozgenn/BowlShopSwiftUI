@@ -28,7 +28,7 @@ extension HomeView {
             .navigationTitle("Menu")
     }
         detail: {
-            
+            EditProductView()
         }
         /*
          it is for < macOS 13.0

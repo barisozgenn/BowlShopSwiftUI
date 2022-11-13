@@ -36,7 +36,14 @@ class MockRestaurantOrderService: OnlineOrderServiceProtocol {
     }
     
     private func mockProduct() -> ProductModel {
-        return ProductModel(id: UUID().uuidString, name: "product name", price: 7.99, detail: "product detail", ingredients: [mockFoodIngredient(), mockFoodIngredient(), mockFoodIngredient()])
+        return ProductModel(id: UUID().uuidString, name: "product name", price: 7.99, detail: "product detail",
+                            category: FoodCategory.food,
+                            ingredients: [mockFoodIngredient(), mockFoodIngredient(), mockFoodIngredient()],
+                            portion: 0, fat: 0, protein: 0, carbohydrate: 0, sugar: 0,
+                            preparationMinute: 0,
+                            images: ["0.png"], videos: ["0.mp4"],
+                            adminId: "",
+                            createdDate: Timestamp())
     }
     
     private func mockUser() -> UserModel {

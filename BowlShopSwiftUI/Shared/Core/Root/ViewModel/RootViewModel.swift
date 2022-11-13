@@ -22,9 +22,9 @@ class RootViewModel: ObservableObject {
 #if os(macOS)
         Task{
             userSession = authManager.userSession
-            try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
+           // try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
             animIsOver = true
-            try await Task.sleep(until: .now + .seconds(0.7), clock: .continuous)
+           // try await Task.sleep(until: .now + .seconds(0.7), clock: .continuous)
             viewIsLoaded = true
             
         }
@@ -34,9 +34,9 @@ class RootViewModel: ObservableObject {
         Task {
             userSession = authManager.userSession
             try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
-            animIsOver = true
+            self.animIsOver = true
             try await Task.sleep(until: .now + .seconds(0.7), clock: .continuous)
-            viewIsLoaded = true
+            self.viewIsLoaded = true
         }
 #endif
     }

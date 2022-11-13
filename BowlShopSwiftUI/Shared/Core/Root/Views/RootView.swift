@@ -19,9 +19,10 @@ struct RootView: View {
                 if let _ = vm.userSession
                 {
 #if os(macOS)
+                    //EditProductView()
                     HomeView()
 #else
-                    ProductDetailView()
+                    HomeView()
 #endif
                 }
                 else {
