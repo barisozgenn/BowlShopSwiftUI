@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-image-preloader.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-image-preloader@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Bowlshopswiftui-logo-barisozgen-image-preloader@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -125,7 +125,7 @@ extension CartView {
             ScrollView(showsIndicators: false){
                 LazyVStack(spacing: 7){
                     ForEach(vm.productsInCart, id: \.self) {product in
-                        CartCellView(title: product, price: "$14.99", image: "smoked-salmon-poke-bowl")
+                        CartCellView(title: product, price: "$9.99", image: "smoked-salmon-poke-bowl")
                         
                     }
                 }

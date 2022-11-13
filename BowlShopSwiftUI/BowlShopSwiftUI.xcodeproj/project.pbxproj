@@ -395,6 +395,7 @@
 		AF3E36BA28F4813E000AE6A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF6D24932920D5BA00378032 /* ProductCellView.swift */,
 				AF3E36BC28F48158000AE6A8 /* ProductDetailViewOldStyle.swift */,
 				AF3E36C528F6AA65000AE6A8 /* ProductDetailView.swift */,
 			);
@@ -762,7 +763,6 @@
 			isa = PBXGroup;
 			children = (
 				AF6D248F291FEB8400378032 /* HomeView.swift */,
-				AF6D24932920D5BA00378032 /* ProductCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

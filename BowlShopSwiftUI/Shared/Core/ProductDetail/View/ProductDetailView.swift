@@ -10,6 +10,9 @@ import AVKit
 
 struct ProductDetailView: View {
     
+    @Binding var presentationMode: Bool
+    let productType: Int = 1
+
     @State private var selectedTab = 0
     @State private var ingredientsViewShown = false
     @State private var productExtraInformationViewShown = false
@@ -135,6 +138,11 @@ extension ProductDetailView {
                 .scaledToFit()
                 .frame(width: 24)
                 .foregroundColor(.white)
+                .onTapGesture {
+                    withAnimation(.spring()){
+                        presentationMode.toggle()
+                    }
+                }
             
             Spacer()
             
@@ -377,10 +385,69 @@ extension ProductDetailView {
                 capsule
                 productExtraMenu
                 
+                Spacer()
+                    .frame(height: 70)
+                Gauge(value: 329, in: 100...700) {
+                    Image(systemName: "flame")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.white)
+                        .font(.subheadline)
+                    
+                } currentValueLabel: {
+                    Text("329")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
+                .gaugeStyle(.accessoryCircular)
+                .tint(.white)
+                .scaleEffect(1.5)
+                Text("calorie".uppercased())
+                    .fontWeight(.bold)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .padding()
+                divider
                 VStack{
+                    HStack{
+                        Text("Serving".uppercased())
+                            Spacer()
+                        Text("307gr")
+                    }
+                    divider
+                    HStack{
+                        Text("Fat".uppercased())
+                            Spacer()
+                        Text("14gr")
+                    }
+                    divider
+                    HStack{
+                        Text("Protein".uppercased())
+                            Spacer()
+                        Text("19gr")
+                    }
+                    divider
+                    HStack{
+                        Text("carbohydrate".uppercased())
+                            Spacer()
+                        Text("21gr")
+                    }
+                    divider
+                    HStack{
+                        Text("sugar".uppercased())
+                            Spacer()
+                        Text("4gr")
+                    }
+                }
+                .fontWeight(.bold)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+               /* VStack{
                     Text("\(viewState.height)")
                 }
-                .frame(height: 60)
+                .frame(height: 60)*/
+                Spacer()
                 Spacer()
             }
             .frame(width: viewWidth)
@@ -388,6 +455,12 @@ extension ProductDetailView {
         .cornerRadius(productExtraInformationViewShown ? 0 : 29)
         .offset(y: productExtraInformationViewShown ? 158 : productExtraInformationViewY - 150)
         .accessibilityIdentifier("productExtraInformation")
+    }
+    
+    private var divider: some View {
+        Divider()
+            .background(.white)
+            .padding(.vertical)
     }
     
     private var videoPlayerView : some View {
@@ -426,6 +499,6 @@ extension ProductDetailView {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView()
+        ProductDetailView(presentationMode: .constant(true))
     }
 }

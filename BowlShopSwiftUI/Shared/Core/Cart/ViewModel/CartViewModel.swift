@@ -23,7 +23,7 @@ class CartViewModel: ObservableObject{
     
     init() {
         
-        self.productsInCart = ["a product", "b product", "c product"]
+        self.productsInCart = ["Salmon Poke Bowl", "Sparkling Water", "Extra Pesto Souce"]
         self.userAddresses = ["BO Tower on JBR St 7/29", "BO Tower on JBR St 7/29"]
         self.userPaymentMethods = ["**** 1234", "**** 5678"]
         

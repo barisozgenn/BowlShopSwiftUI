@@ -5,9 +5,9 @@
 //  Created by Baris OZGEN on 15.10.2022.
 //
 
-import Foundation
+import FirebaseStorage
 import Combine
-
+import SwiftUI
 class ProductDetailViewModel : ObservableObject {
     
     @Published var isAvailableInStock: Bool
@@ -16,8 +16,8 @@ class ProductDetailViewModel : ObservableObject {
     
     let dataService : ProductDataServiceProtocol
     var cancellables = Set<AnyCancellable>()
-
-    init(isAvailableInStock: Bool, dataService : ProductDataServiceProtocol = ProductMockDataService(products: nil)) {
+    
+    init(isAvailableInStock: Bool = true, dataService : ProductDataServiceProtocol = ProductMockDataService(products: nil)) {
         self.isAvailableInStock = isAvailableInStock
         self.dataService = dataService
     }
@@ -29,7 +29,7 @@ class ProductDetailViewModel : ObservableObject {
     
     func selectItem(item: String){
         if let sItem = dataArray.first(where: {$0 == item}) {
-            selectedItem = sItem 
+            selectedItem = sItem
         }
         else {
             selectedItem = nil
@@ -64,6 +64,18 @@ class ProductDetailViewModel : ObservableObject {
                 self?.dataArray = returnedProducts
             }
             .store(in: &cancellables)
-
+        
+    }
+    
+    func downloadImage(imageName: String, completion: @escaping (_ productImage: Image) -> ()){
+        let ref = Storage.storage().reference(withPath: "\(FirebaseFileType.productImage.folderName)\(imageName)")
+        
+        ref.getData(maxSize: 1 * 1024 * 1024) {(data, _) in
+            
+            guard let data = data,
+                  let uiImage = UIImage(data: data) else {return}
+            
+            completion(Image(uiImage: uiImage))
+        }
     }
 }

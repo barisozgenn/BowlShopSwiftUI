@@ -10,22 +10,23 @@ import FirebaseStorage
 
 struct ProductCellView: View {
     let product: ProductModel
-    
-    @State private var productImage: Image = Image("smoked-salmon-poke-bowl")
+    @StateObject private var vm = ProductDetailViewModel()
+    @State private var productDefaultImage: Image = Image("Bowlshopswiftui-logo-barisozgen-image-preloader")
     
     var body: some View {
         VStack(spacing: -16){
            
-            productImage
+            productDefaultImage
                 .resizable()
                 .scaledToFill()
                 .cornerRadius(14)
                 .frame(width: 180, height: 180)
                 .clipped()
-            
+                .foregroundColor(.gray)
+                .onAppear{downloadImage()}
             VStack(spacing: 0){
                 ZStack {
-                    productImage
+                    productDefaultImage
                         .resizable()
                         .blur(radius: 29)
                         .clipped()
@@ -41,7 +42,7 @@ struct ProductCellView: View {
                 .frame(height: 75)
                 
                 ZStack{
-                    productImage
+                    productDefaultImage
                         .resizable()
                         .blur(radius: 29)
                         .cornerRadius(14)
@@ -76,17 +77,12 @@ struct ProductCellView: View {
 
 extension ProductCellView {
     
-    /*func downloadImage(productImageUrl: String){
-     let ref = Storage.storage().reference(withPath: "\(FirebaseFileType.productImage.folderName)\(productImageUrl)")
-     
-     ref.getData(maxSize: 1 * 1024 * 1024) {(data, _) in
-     
-     guard let data = data,
-     let uiImage = UIImage(data: data) else {return}
-     
-     productImage = Image(uiImage: uiImage)
+    func downloadImage(){
+        guard let imageName = product.images.first else {return}
+        vm.downloadImage(imageName: imageName){ image in
+            self.productDefaultImage = image
+        }
      }
-     }*/
 }
 struct ProductCellView_Previews: PreviewProvider {
     static var previews: some View {

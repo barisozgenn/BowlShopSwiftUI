@@ -15,20 +15,29 @@ struct HomeView: View {
     @State private var filterViewVisibility = false
     @State private var filterCalories = 429.0
     @State private var filterCaloriesEditing = false
-
+    @State private var selectedProduct: ProductModel?
+    @State private var productDetailViewVisibility = false
     let columns = [
-            GridItem(.adaptive(minimum: 180))
-        ]
+        GridItem(.adaptive(minimum: 180))
+    ]
     
     var body: some View {
-        ZStack {
-            productListView
-            headerView
-            footerView
+        ZStack{
+            ZStack {
+                productListView
+                headerView
+                footerView
+            }
+            .frame(maxHeight: .infinity)
+            .ignoresSafeArea()
+            .background(Color(.systemGray5))
+            
+           
+                ProductDetailView(presentationMode: $productDetailViewVisibility)
+                    .offset(y: productDetailViewVisibility ? 0 : 2907)
+                    .opacity(productDetailViewVisibility ? 1 : 0)
         }
-        .frame(maxHeight: .infinity)
-        .ignoresSafeArea()
-        .background(Color(.systemGray6))
+       
     }
 }
 
@@ -61,7 +70,7 @@ extension HomeView {
             }
             .foregroundColor(Color(.systemGreen))
             .padding()
-      
+            
         }
         .padding(.vertical)
         .frame(maxHeight: .infinity,alignment: .top)
@@ -97,6 +106,13 @@ extension HomeView {
                 SearchBarView(searchText: $searchText)
             }
             .padding()
+            .background {
+                GeometryReader { geo in
+                    Wave(waveHeight: 7, phase: Angle(degrees: Double(geo.frame(in: .global).minY) * 7.29))
+                        .foregroundColor(.white)
+                }
+                .frame(height: 129)
+            }
         }
         .padding(.vertical)
         .frame(maxHeight: .infinity,alignment: .bottom)
@@ -112,17 +128,17 @@ extension HomeView {
                 .foregroundColor(.gray)
             HStack{
                 Slider(
-                        value: $filterCalories,
-                        in: 0...700,
-                        step: 10
-                    ) {
-                        Text("Calorie")
-                    } minimumValueLabel: {
-                        Text("100")
-                    } maximumValueLabel: {
-                        Text("700")
-                    }
-              
+                    value: $filterCalories,
+                    in: 0...700,
+                    step: 10
+                ) {
+                    Text("Calorie")
+                } minimumValueLabel: {
+                    Text("100")
+                } maximumValueLabel: {
+                    Text("700")
+                }
+                
             }
             Divider()
                 .padding(.vertical)
@@ -138,7 +154,7 @@ extension HomeView {
                                     Text(ingredient.title.capitalized)
                                 }
                             })
-                           
+                            
                             .foregroundColor(.gray)
                         }
                         .padding(.all, 4)
@@ -146,8 +162,8 @@ extension HomeView {
                         .cornerRadius(4)
                     }
                 }
-                    
-                }
+                
+            }
             .frame(height: 35)
         }
         .padding()
@@ -155,14 +171,27 @@ extension HomeView {
     
     private var productListView: some View {
         ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(vm.products, id: \.id ) { product in
-                            ProductCellView(product: product)
+            Spacer()
+                .frame(height: 129)
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(vm.products, id: \.id ) { product in
+                    ProductCellView(product: product)
+                        .onTapGesture {
+                            selectedProduct = product
+
+                            withAnimation(.spring()){
+                                productDetailViewVisibility.toggle()
+                            }
                         }
-                    }
-                    .padding(.horizontal)
                 }
-                .frame(maxHeight: 1000)
+            }
+            .padding(.horizontal)
+            
+            Spacer()
+                .frame(height: 129)
+        }
+        .frame(maxHeight: 1000)
+        .padding(.vertical)
     }
     
     struct Wave: Shape {
