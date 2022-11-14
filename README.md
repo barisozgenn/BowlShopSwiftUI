@@ -4,7 +4,7 @@ E-Commerce app SwiftUI iOS 16 MVVM
 ![bowlshop-swiftui-barisozgen](https://user-images.githubusercontent.com/48822802/201545834-a23724a8-7c2d-4197-a330-fdf2536a72dc.png)
 
 Hi guys, 
-I tried to prepare one from a very used source. What we focused on;
+I tried to prepare one of very useful sources for swiftUI adaptation. What we focused on;
 
 E-Commerce app SwiftUI iOS 16 MVVM
 
